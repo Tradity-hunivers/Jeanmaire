@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bauer Couverture | Couvreur Zinguerie a Sannois - Val-d'Oise</title>
+<meta name="description" content="Bauer Couverture, specialiste couverture et zinguerie a Sannois (95). Plus de 10 ans d'expertise. Devis gratuit, inspection drone. 01 84 21 02 71.">
+<link rel="canonical" href="https://bauer-couvreur-zinguerie.fr/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <span class="loader-logo">Bauer <strong>Couverture</strong></span>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill" id="loaderFill"></div>
+    </div>
+    <span class="loader-percent" id="loaderPercent">0%</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-text">Bauer <strong>Couverture</strong></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="/" class="nav-link active">Accueil</a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-toggle">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="couverture.html">Couverture</a>
+          <a href="zinguerie.html">Zinguerie</a>
+          <a href="charpente.html">Traitement charpente</a>
+          <a href="fenetres-toit.html">Fenêtres de toit</a>
+          <a href="isolation.html">Isolation &amp; Étanchéité</a>
+          <a href="nettoyage.html">Nettoyage toiture</a>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0184210271" class="header-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>01 84 21 02 71</span>
+      </a>
+      <a href="#devis" class="btn btn-primary header-cta">Devis gratuit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="couverture.html">Couverture</a>
+  <a href="zinguerie.html">Zinguerie</a>
+  <a href="charpente.html">Traitement charpente</a>
+  <a href="fenetres-toit.html">Fenêtres de toit</a>
+  <a href="isolation.html">Isolation &amp; Étanchéité</a>
+  <a href="nettoyage.html">Nettoyage toiture</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:0184210271" class="btn btn-primary" style="margin-top:1rem">01 84 21 02 71</a>
+</div>
+
+<!-- HERO (standalone 100vh) -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <p class="hero-label">Couvreur a Sannois &mdash; Val-d'Oise</p>
+    <h1 class="hero-title">
+      <span class="word">L'excellence</span>
+      <span class="word">de la</span>
+      <span class="word"><em>toiture</em></span>
+    </h1>
+    <p class="hero-sub">Couverture, zinguerie, isolation et inspection drone depuis plus de 10 ans.</p>
+    <div class="hero-actions">
+      <a href="#devis" class="btn btn-primary btn-lg"><span>Demander un devis gratuit</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="tel:0662134415" class="btn btn-outline btn-lg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>06 62 13 44 15</span></a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- CANVAS (fixed, full viewport) -->
+<canvas id="videoCanvas"></canvas>
+<div id="canvasTint" class="canvas-tint"></div>
+
+<!-- DARK OVERLAY (for stats section) -->
+<div id="darkOverlay" class="dark-overlay"></div>
+
+<!-- MARQUEE -->
+<div class="marquee" id="marquee">
+  <div class="marquee-track">
+    <span>Couverture</span><span class="marquee-dot"></span>
+    <span>Zinguerie</span><span class="marquee-dot"></span>
+    <span>Charpente</span><span class="marquee-dot"></span>
+    <span>Fenêtres de toit</span><span class="marquee-dot"></span>
+    <span>Isolation</span><span class="marquee-dot"></span>
+    <span>Nettoyage</span><span class="marquee-dot"></span>
+    <span>Couverture</span><span class="marquee-dot"></span>
+    <span>Zinguerie</span><span class="marquee-dot"></span>
+    <span>Charpente</span><span class="marquee-dot"></span>
+    <span>Fenêtres de toit</span><span class="marquee-dot"></span>
+    <span>Isolation</span><span class="marquee-dot"></span>
+    <span>Nettoyage</span><span class="marquee-dot"></span>
+  </div>
+</div>
+
+<!-- SCROLL CONTAINER -->
+<div id="scrollContainer">
+
+  <!-- Section 1: Présentation (centre, slide-left) -->
+  <section class="scroll-section" data-animation="slide-left">
+    <div class="section-inner align-center">
+      <p class="section-label">001 / Notre savoir-faire</p>
+      <h2 class="section-heading">Plus de 10 ans au service de vos <em>toitures</em></h2>
+      <p class="section-body">Fondée par Ezequel-Émile Bauer, notre entreprise est le spécialiste de la couverture et de la zinguerie à Sannois et dans tout le Val-d'Oise. Nous intervenons sur les toitures en tuiles, ardoises, zinc et bac acier, avec une exigence de qualité qui a bâti notre réputation auprès des particuliers et des professionnels du 95.</p>
+      <p class="section-body">Chaque chantier est unique. C'est pourquoi nous commençons toujours par un diagnostic complet — souvent réalisé par drone — avant de vous proposer un devis détaillé, transparent et sans surprise.</p>
+      <a href="couverture.html" class="btn btn-outline section-cta"><span>Découvrir nos prestations</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Section 2: Services gauche→droite (clip-reveal) -->
+  <section class="scroll-section section-services" data-animation="clip-reveal">
+    <div class="section-inner align-center">
+      <p class="section-label">002 / Nos expertises</p>
+      <h2 class="section-heading">Tous les métiers de la <em>toiture</em></h2>
+      <p class="section-body">De la pose de couverture neuve au nettoyage de toiture en passant par la zinguerie, le traitement de charpente, l'isolation thermique et l'installation de fenêtres de toit — nous maîtrisons l'ensemble des corps de métier pour prendre en charge votre projet de A à Z.</p>
+      <div class="services-list">
+        <a href="couverture.html" class="service-line"><span class="service-num">01</span><span class="service-name">Couverture</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="zinguerie.html" class="service-line"><span class="service-num">02</span><span class="service-name">Zinguerie</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="charpente.html" class="service-line"><span class="service-num">03</span><span class="service-name">Traitement charpente</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="fenetres-toit.html" class="service-line"><span class="service-num">04</span><span class="service-name">Fenêtres de toit</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="isolation.html" class="service-line"><span class="service-num">05</span><span class="service-name">Isolation &amp; Étanchéité</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="nettoyage.html" class="service-line"><span class="service-num">06</span><span class="service-name">Nettoyage toiture</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Drone (slide-right) -->
+  <section class="scroll-section" data-animation="slide-right">
+    <div class="section-inner align-center">
+      <p class="section-label">003 / Innovation</p>
+      <h2 class="section-heading">Diagnostic de votre toiture par <em>drone</em></h2>
+      <p class="section-body">Avant toute intervention, Bauer Couverture réalise une inspection aérienne par drone pour évaluer précisément l'état de votre toiture sans échafaudage. Cette technologie nous permet de détecter les fissures, les infiltrations d'eau, les tuiles cassées et les zones de mousse invisibles depuis le sol.</p>
+      <p class="section-body">Vous recevez un rapport complet avec photos et vidéos HD sous 24 heures. Le devis qui en découle est basé sur des données réelles, pas sur des estimations. Résultat : pas de mauvaise surprise, un prix juste et des travaux ciblés exactement là où c'est nécessaire.</p>
+      <a href="contact.html" class="btn btn-outline section-cta"><span>Demander mon diagnostic gratuit</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Section 4: Stats (dark overlay, stagger-up) -->
+  <section class="scroll-section section-stats" data-animation="stagger-up">
+    <div class="section-inner align-center">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Toitures rénovées</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Clients satisfaits</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Zone d'intervention (slide-left) -->
+  <section class="scroll-section" data-animation="slide-left">
+    <div class="section-inner align-center">
+      <p class="section-label">004 / Zone d'intervention</p>
+      <h2 class="section-heading">Couvreur à <em>Sannois</em> et dans tout le Val-d'Oise</h2>
+      <p class="section-body">Notre équipe intervient dans un rayon de 30 km autour de Sannois. Que vous soyez à Argenteuil, Franconville, Ermont, Saint-Gratien, Cormeilles-en-Parisis, Montmorency, Enghien-les-Bains, Bezons ou Herblay — nous nous déplaçons gratuitement pour établir votre devis.</p>
+      <p class="section-body">Artisan local depuis plus de 10 ans, nous connaissons les particularités des toitures du Val-d'Oise : tuiles mécaniques anciennes, couvertures en ardoise, problèmes d'étanchéité liés au climat francilien. Cette connaissance du terrain nous permet d'intervenir plus vite et de proposer les solutions les plus adaptées à votre habitat.</p>
+    </div>
+  </section>
+
+  <!-- Section 6: Pourquoi nous (scale-up) -->
+  <section class="scroll-section" data-animation="scale-up">
+    <div class="section-inner align-center">
+      <p class="section-label">005 / Nos engagements</p>
+      <h2 class="section-heading">Pourquoi choisir <em>Bauer</em> Couverture ?</h2>
+      <p class="section-body">Garantie décennale sur tous nos travaux. Assurance responsabilité civile professionnelle. Déplacement et devis gratuits sous 48 heures. Inspection drone offerte pour tout devis accepté. Propreté de chantier garantie — nous laissons votre propriété impeccable après chaque intervention.</p>
+      <p class="section-body">Nous ne sous-traitons jamais. L'équipe qui réalise le diagnostic est la même qui effectue les travaux. Un seul interlocuteur, du premier appel à la réception du chantier. C'est notre façon de garantir la qualité à chaque étape.</p>
+    </div>
+  </section>
+
+  <!-- Section 7: Témoignages (slide-right) -->
+  <section class="scroll-section section-testimonials" data-animation="slide-right">
+    <div class="section-inner align-center">
+      <p class="section-label">006 / Avis clients</p>
+      <h2 class="section-heading">Ce qu'ils en <em>disent</em></h2>
+      <div class="testimonials-stack">
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 étoiles">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Prestation de qualité. Très bon rapport qualité prix. Mr Bauer est très pro."</p>
+          <span class="testimonial-author">&mdash; Gilles DELETRAIN</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 étoiles">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Tout s'est très bien passé. Rapidité et efficacité."</p>
+          <span class="testimonial-author">&mdash; Céline Atienza</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="stars" aria-label="5 étoiles">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Emile Bauer et son équipe sont venus pour réparer la toiture et isoler les combles. Rapidité, adaptabilité et qualité."</p>
+          <span class="testimonial-author">&mdash; Client vérifié</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Devis (fade-up, persist) -->
+  <section class="scroll-section section-devis" data-animation="fade-up" data-persist="true" id="devis">
+    <div class="section-inner align-center">
+      <p class="section-label">007 / Devis gratuit</p>
+      <h2 class="section-heading">Décrivez votre <em>projet</em></h2>
+      <p class="section-body">Remplissez le formulaire ci-dessous et recevez un devis détaillé sous 48 heures. Déplacement gratuit, inspection drone offerte, aucun engagement.</p>
+      <div class="devis-form-wrap">
+        <form class="devis-form" id="devisForm" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom complet *</label>
+              <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="tel">Téléphone *</label>
+              <input type="tel" id="tel" name="tel" required placeholder="06 XX XX XX XX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label for="ville">Ville *</label>
+              <input type="text" id="ville" name="ville" required placeholder="Sannois, Argenteuil...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Type de prestation *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Choisir une prestation</option>
+              <option value="couverture">Couverture (pose / rénovation)</option>
+              <option value="reparation">Réparation / Fuite urgente</option>
+              <option value="zinguerie">Zinguerie / Gouttières</option>
+              <option value="charpente">Traitement charpente</option>
+              <option value="fenetre">Fenêtre de toit / Velux</option>
+              <option value="isolation">Isolation / Étanchéité</option>
+              <option value="nettoyage">Nettoyage / Démoussage</option>
+              <option value="drone">Inspection drone</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Décrivez votre projet</label>
+            <textarea id="message" name="message" rows="4" placeholder="Type de toiture, surface, problème constaté..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <span>Envoyer ma demande de devis</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">En soumettant ce formulaire, vous acceptez notre <a href="mentions-legales.html">politique de confidentialité</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END SCROLL CONTAINER -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Bauer <strong>Couverture</strong></span>
+        <p>Couvreur professionnel a Sannois. Toiture, zinguerie, isolation et inspection par drone dans tout le Val-d'Oise.</p>
+        <p class="footer-siret">SIRET : 850 281 494 00011</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="couverture.html">Couverture</a></li>
+          <li><a href="zinguerie.html">Zinguerie</a></li>
+          <li><a href="charpente.html">Traitement charpente</a></li>
+          <li><a href="fenetres-toit.html">Fenêtres de toit</a></li>
+          <li><a href="isolation.html">Isolation &amp; Étanchéité</a></li>
+          <li><a href="nettoyage.html">Nettoyage toiture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="conditions-generales.html">Conditions générales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0184210271">01 84 21 02 71</a></li>
+          <li><a href="tel:0662134415">06 62 13 44 15</a></li>
+          <li><a href="mailto:ebcouvertur@gmail.com">ebcouvertur@gmail.com</a></li>
+          <li>3 rue de l'Hermitage</li>
+          <li>95110 Sannois</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Bauer Couverture &mdash; Tous droits réservés</p>
+      <p>Site par <a href="https://helpaiagency.fr" target="_blank" rel="noopener">HelpAi</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="to-top" id="toTop" aria-label="Retour en haut">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+<script src="cookies.js"></script>
+</body>
+</html>
