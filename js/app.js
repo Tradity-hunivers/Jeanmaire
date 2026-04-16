@@ -170,14 +170,34 @@
       scrub: 0.5,
       onUpdate: function (self) {
         if (!canvasReady) return;
-        const frame = Math.min(
+        var p = self.progress;
+        var frame = Math.min(
           FRAME_COUNT - 1,
-          Math.floor(self.progress * FRAME_COUNT * FRAME_SPEED)
+          Math.floor(p * FRAME_COUNT * FRAME_SPEED)
         );
-        const clampedFrame = Math.min(frame, FRAME_COUNT - 1);
+        var clampedFrame = Math.min(frame, FRAME_COUNT - 1);
         if (clampedFrame !== currentFrame) {
           currentFrame = clampedFrame;
           drawFrame(currentFrame);
+        }
+
+        // Circle wipe OUT when video is done (last 15% of scroll)
+        var videoEndPoint = 1.0 / FRAME_SPEED; // ~0.4, when all frames played
+        var wipeOutStart = videoEndPoint + 0.05;
+        var wipeOutEnd = wipeOutStart + 0.12;
+        if (p > wipeOutStart && p <= wipeOutEnd) {
+          var wipeProgress = (p - wipeOutStart) / (wipeOutEnd - wipeOutStart);
+          var radius = 80 * (1 - wipeProgress);
+          canvas.style.clipPath = 'circle(' + radius + '% at 50% 50%)';
+          if (canvasTint) canvasTint.style.clipPath = canvas.style.clipPath;
+          canvas.style.opacity = 1 - wipeProgress;
+          if (canvasTint) canvasTint.style.opacity = canvas.style.opacity;
+        } else if (p > wipeOutEnd) {
+          canvas.style.opacity = 0;
+          if (canvasTint) canvasTint.style.opacity = 0;
+        } else if (p > 0.05) {
+          canvas.style.clipPath = 'none';
+          if (canvasTint) canvasTint.style.clipPath = 'none';
         }
       },
     });
@@ -354,7 +374,7 @@
         }
 
         case 'scale-up': {
-          const cards = section.querySelectorAll('.testimonial-card');
+          const cards = section.querySelectorAll('.testimonial-card, .g-review-card, .why-card');
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: section,

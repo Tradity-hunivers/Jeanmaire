@@ -11,10 +11,10 @@
   --text-light: #E8E4DF;
   --text-dark: #0D0D14;
   --text-muted: #E8E4DF;
-  --accent: #F27A1A;
-  --accent-light: #FFAA33;
-  --accent-dark: #D06510;
-  --copper: #F27A1A;
+  --accent: #DC2626;
+  --accent-light: #EF4444;
+  --accent-dark: #B91C1C;
+  --copper: #DC2626;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Poppins', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -229,7 +229,7 @@ em {
 
 .dropdown-menu a:hover {
   color: var(--accent);
-  background: rgba(242,122,26,0.06);
+  background: rgba(220,38,38,0.06);
 }
 
 /* Header right */
@@ -522,7 +522,7 @@ em {
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 800;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(242,122,26,0.25);
+  -webkit-text-stroke: 1px rgba(220,38,38,0.25);
   letter-spacing: -0.03em;
   text-transform: uppercase;
   flex-shrink: 0;
@@ -750,6 +750,136 @@ em {
   font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+/* =================== GOOGLE REVIEW CARDS =================== */
+.google-reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.g-review-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  opacity: 0;
+  transform: scale(0.9);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.g-review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.g-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.g-author-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.g-author-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.g-review-date {
+  font-size: 0.75rem;
+  color: #70757a;
+}
+
+.g-logo {
+  flex-shrink: 0;
+}
+
+.g-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.g-review-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #3c4043;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .google-reviews {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================== WHY CARDS =================== */
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 700px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: left;
+}
+
+.why-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.why-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .why-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =================== DEVIS FORM =================== */
