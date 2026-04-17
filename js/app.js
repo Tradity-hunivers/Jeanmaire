@@ -49,7 +49,11 @@
     const ih = img.naturalHeight || img.height;
     const cw = canvas.width;
     const ch = canvas.height;
-    const scale = Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
+    // Cover scaling — fills viewport without black bars.
+    // On portrait screens (tall phones), dezoom slightly so the scene is less cropped.
+    const isPortrait = ch > cw;
+    const baseScale = Math.max(cw / iw, ch / ih);
+    const scale = isPortrait ? baseScale * 0.95 : baseScale * IMAGE_SCALE;
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (cw - dw) / 2;
@@ -107,6 +111,9 @@
     initScrollHeader();
     initYear();
     initFormPersist();
+    initCardTilt();
+    initDroneFly();
+    initTestiCarousel();
   }
 
   /* ---------- LENIS ---------- */
@@ -136,7 +143,7 @@
     scrollContainer.style.minHeight = Math.max(scrollH, 800 * parseFloat(getComputedStyle(document.documentElement).fontSize) / 16) + 'px';
 
     // Actually let's set a concrete min-height in vh
-    scrollContainer.style.minHeight = '900vh';
+    scrollContainer.style.minHeight = '520vh';
 
     // Canvas starts hidden, reveals immediately on first scroll
     gsap.set(canvas, { opacity: 0, clipPath: 'circle(0% at 50% 50%)' });
@@ -330,19 +337,37 @@
                 stagger: 0.2,
               });
 
-              // Animate counters
-              items.forEach(function (item) {
+              // Animate counters + progress circle (also replayable on hover)
+              function playStat(item) {
                 const numEl = item.querySelector('.stat-number');
+                if (!numEl) return;
                 const target = parseInt(numEl.dataset.target, 10);
+                const circle = item.querySelector('.stat-circle-fg');
                 const obj = { val: 0 };
+                numEl.textContent = '0';
                 gsap.to(obj, {
                   val: target,
-                  duration: 2,
+                  duration: 1.8,
                   ease: 'power2.out',
+                  overwrite: true,
                   onUpdate: function () {
                     numEl.textContent = Math.round(obj.val);
                   },
                 });
+                if (circle) {
+                  gsap.fromTo(circle,
+                    { strokeDashoffset: 439.82 },
+                    { strokeDashoffset: 0, duration: 1.8, ease: 'power2.out', overwrite: true }
+                  );
+                }
+              }
+
+              items.forEach(function (item) {
+                playStat(item);
+                if (!item.dataset.hoverBound) {
+                  item.addEventListener('mouseenter', function () { playStat(item); });
+                  item.dataset.hoverBound = '1';
+                }
               });
             },
           });
@@ -350,7 +375,7 @@
         }
 
         case 'clip-reveal': {
-          const list = section.querySelector('.services-list');
+          const list = section.querySelector('.services-list') || section.querySelector('.services-cards');
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: section,
@@ -363,10 +388,10 @@
           if (body) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4');
           if (list) {
             tl.to(list, { opacity: 1, duration: 0.3 }, '-=0.3');
-            var lines = list.querySelectorAll('.service-line');
-            tl.fromTo(lines,
-              { opacity: 0, x: -30 },
-              { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 },
+            var items = list.querySelectorAll('.service-line, .service-card-home');
+            tl.fromTo(items,
+              { opacity: 0, y: 30 },
+              { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out', stagger: 0.08 },
               '-=0.1'
             );
           }
@@ -406,6 +431,21 @@
           if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.to(heading, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
           if (formWrap) tl.fromTo(formWrap, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3');
+          break;
+        }
+
+        case 'fade-carousel': {
+          const viewport = section.querySelector('.testi-viewport');
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 75%',
+              once: true,
+            },
+          });
+          if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+          if (heading) tl.to(heading, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
+          if (viewport) tl.fromTo(viewport, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
           break;
         }
       }
@@ -507,6 +547,172 @@
       alert('Merci ! Votre demande de devis a bien été envoyée. Nous vous recontacterons sous 48h.');
       form.reset();
     });
+  }
+
+  /* ---------- CARD TILT (3D HOVER) ---------- */
+  function initCardTilt() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    var cards = document.querySelectorAll('.service-card-home');
+    var MAX_TILT = 6;
+    var LIFT = 6;
+
+    cards.forEach(function (card) {
+      var raf = null;
+      var targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+      var hovering = false;
+
+      function render() {
+        currentX += (targetX - currentX) * 0.18;
+        currentY += (targetY - currentY) * 0.18;
+        var lift = hovering ? LIFT : 0;
+        card.style.transform = 'perspective(900px) rotateX(' + currentY + 'deg) rotateY(' + currentX + 'deg) translateY(-' + lift + 'px)';
+        if (Math.abs(targetX - currentX) > 0.02 || Math.abs(targetY - currentY) > 0.02 || hovering) {
+          raf = requestAnimationFrame(render);
+        } else {
+          card.style.transform = '';
+          raf = null;
+        }
+      }
+
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width - 0.5;
+        var py = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = px * MAX_TILT * 2;
+        targetY = -py * MAX_TILT * 2;
+        hovering = true;
+        if (!raf) raf = requestAnimationFrame(render);
+      });
+
+      card.addEventListener('mouseleave', function () {
+        targetX = 0;
+        targetY = 0;
+        hovering = false;
+        if (!raf) raf = requestAnimationFrame(render);
+      });
+    });
+  }
+
+  /* ---------- DRONE SCROLL TRAVERSE (right -> left across viewport) ---------- */
+  function initDroneFly() {
+    var drone = document.querySelector('.drone-fly');
+    if (!drone) return;
+    var wrap = drone.closest('.drone-media');
+    if (!wrap) return;
+
+    var ticking = false;
+
+    function apply() {
+      ticking = false;
+      var rect = wrap.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var total = vh + rect.height;
+      var scrolled = vh - rect.top;
+      var progress = scrolled / total;
+      if (progress < 0) progress = 0;
+      if (progress > 1) progress = 1;
+      // linear horizontal traversal: 110vw -> -110vw (no vertical movement)
+      var x = 110 - progress * 220;
+      drone.style.transform = 'translate3d(' + x.toFixed(2) + 'vw, 0, 0)';
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    if (typeof lenis !== 'undefined' && lenis && typeof lenis.on === 'function') {
+      lenis.on('scroll', onScroll);
+    }
+  }
+
+  /* ---------- TESTIMONIALS CAROUSEL ---------- */
+  function initTestiCarousel() {
+    var track = document.getElementById('testiTrack');
+    if (!track) return;
+    var viewport = track.closest('.testi-viewport');
+    var cards = Array.prototype.slice.call(track.querySelectorAll('.testi-card'));
+    if (!cards.length) return;
+
+    var dotsWrap = document.getElementById('testiDots');
+    var prevBtn = document.querySelector('.testi-nav-btn[data-dir="-1"]');
+    var nextBtn = document.querySelector('.testi-nav-btn[data-dir="1"]');
+
+    var index = 0;
+    var perView = 3;
+
+    function computePerView() {
+      var w = window.innerWidth;
+      if (w < 640) perView = 1;
+      else if (w < 960) perView = 2;
+      else perView = 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, cards.length - perView);
+    }
+
+    function clampIndex(i) {
+      return Math.max(0, Math.min(i, maxIndex()));
+    }
+
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      var count = maxIndex() + 1;
+      for (var i = 0; i < count; i++) {
+        (function (i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'testi-dot' + (i === index ? ' active' : '');
+          dot.setAttribute('aria-label', 'Aller à l\'avis ' + (i + 1));
+          dot.addEventListener('click', function () { goTo(i); });
+          dotsWrap.appendChild(dot);
+        })(i);
+      }
+    }
+
+    function update() {
+      var card = cards[0];
+      var style = window.getComputedStyle(track);
+      var gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+      var cardWidth = card.getBoundingClientRect().width;
+      var offset = index * (cardWidth + gap);
+      track.style.transform = 'translateX(' + (-offset) + 'px)';
+      if (dotsWrap) {
+        Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+          d.classList.toggle('active', i === index);
+        });
+      }
+      if (prevBtn) prevBtn.disabled = index <= 0;
+      if (nextBtn) nextBtn.disabled = index >= maxIndex();
+    }
+
+    function goTo(i) {
+      index = clampIndex(i);
+      update();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+
+    window.addEventListener('resize', function () {
+      var prevPerView = perView;
+      computePerView();
+      if (prevPerView !== perView) {
+        index = clampIndex(index);
+        buildDots();
+      }
+      update();
+    });
+
+    computePerView();
+    buildDots();
+    update();
   }
 
   /* ---------- START ---------- */

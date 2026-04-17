@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.backup$
+
+# Sitemap
+Sitemap: https://bauer-couvreur-zinguerie.fr/sitemap.xml
