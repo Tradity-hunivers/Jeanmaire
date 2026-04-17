@@ -49,11 +49,12 @@
     const ih = img.naturalHeight || img.height;
     const cw = canvas.width;
     const ch = canvas.height;
-    // Cover scaling — fills viewport without black bars.
-    // On portrait screens (tall phones), dezoom slightly so the scene is less cropped.
+    // On portrait (mobile), use CONTAIN (Math.min) to show full image without truncation.
+    // On landscape, use COVER (Math.max) to fill viewport without bars.
     const isPortrait = ch > cw;
-    const baseScale = Math.max(cw / iw, ch / ih);
-    const scale = isPortrait ? baseScale * 0.95 : baseScale * IMAGE_SCALE;
+    const scale = isPortrait
+      ? Math.min(cw / iw, ch / ih) * 1.05  // contain-ish with slight over to avoid visible bars
+      : Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (cw - dw) / 2;

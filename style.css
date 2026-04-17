@@ -1729,7 +1729,7 @@ em {
 
 .photo-marquee-track img {
   height: 240px;
-  width: auto;
+  width: 380px;
   border-radius: 12px;
   object-fit: cover;
   flex-shrink: 0;
@@ -1738,7 +1738,8 @@ em {
 
 @media (max-width: 768px) {
   .photo-marquee-track img {
-    height: 160px;
+    height: 180px;
+    width: 280px;
   }
 }
 
@@ -2004,7 +2005,8 @@ em {
   .photo-marquee-row { margin-bottom: 0.85rem; }
   .photo-marquee-track { gap: 0.85rem; }
   .photo-marquee-track img {
-    height: 140px;
+    height: 160px;
+    width: 240px;
     border-radius: 10px;
   }
 
@@ -2027,9 +2029,123 @@ em {
   .drone-media { height: 22vh; margin-top: 1rem; }
   .drone-fly { width: clamp(140px, 42vw, 200px); top: 58%; }
 
-  .photo-marquee-track img { height: 110px; }
+  .photo-marquee-track img { height: 130px; width: 200px; }
 
   .section-heading { font-size: clamp(1.9rem, 8vw, 2.3rem) !important; line-height: 1.1; }
 
   .hero-title { font-size: clamp(2.2rem, 11vw, 3.6rem); }
+}
+
+/* =================== MOBILE POLISH - ANIMATION VISIBILITY + CENTERING =================== */
+@media (max-width: 900px) {
+  /* Cards more transparent so video animation shows through */
+  .service-card-home,
+  .section-why .why-card,
+  .testi-card {
+    background: rgba(15, 15, 24, 0.38) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .service-card-home:hover,
+  .section-why .why-card:hover,
+  .testi-card:hover {
+    background: rgba(25, 25, 36, 0.55) !important;
+  }
+
+  /* Compact cards - shorter vertically */
+  .service-card-home {
+    padding: 1.25rem 1.1rem !important;
+    gap: 0.55rem !important;
+  }
+  .service-card-home h3 { font-size: 1rem; line-height: 1.25; }
+  .service-card-home p { font-size: 0.85rem; line-height: 1.5; }
+  .service-card-home .service-card-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-why .why-card { padding: 1.25rem 1.1rem 1rem !important; }
+  .section-why .why-card h3 { font-size: 1rem !important; }
+  .section-why .why-card p { font-size: 0.85rem !important; line-height: 1.5 !important; }
+
+  .testi-card { padding: 1.25rem !important; gap: 0.85rem !important; }
+  .testi-text { font-size: 0.88rem; line-height: 1.55; }
+
+  /* Stats circles — force centering on all breakpoints */
+  .stats-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  .stat-item {
+    width: 100%;
+    align-items: center !important;
+    justify-content: center;
+  }
+  .stat-circle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section-inner needs horizontal centering on mobile */
+  .scroll-section {
+    justify-content: center;
+  }
+
+  /* Force center titles inside local section on mobile */
+  .section-local .local-text {
+    text-align: center;
+  }
+  .section-local .local-text .section-label {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  /* Testimonials header centered + stacked */
+  .testi-header {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+    gap: 1rem;
+  }
+  .testi-title-wrap {
+    text-align: center !important;
+  }
+  .testi-title-wrap .section-heading {
+    text-align: center !important;
+  }
+  .testi-title-wrap .section-label {
+    padding-left: 0 !important;
+  }
+  .testi-title-wrap .section-label::before {
+    display: none !important;
+  }
+
+  /* FAQ heading centered on mobile */
+  .faq-heading,
+  .faq-label,
+  .faq-intro {
+    text-align: center;
+  }
+  .faq-text .faq-cta {
+    margin: 0 auto;
+  }
+
+  /* Ensure the hero canvas backdrop is visible but not overwhelming */
+  .canvas-tint {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Stats circles smaller and centered tighter */
+  .stat-circle { width: clamp(130px, 42vw, 170px) !important; }
+  .stats-grid { gap: 1.75rem !important; }
+
+  /* Drone section: less empty feel */
+  .section-drone .drone-media { height: 24vh; }
 }
