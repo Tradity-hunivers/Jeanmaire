@@ -110,8 +110,8 @@
     // Init GSAP
     initGSAP();
 
-    // Hero entrance animation
-    animateHero();
+    // Hero entrance animation now handled by CSS (see .hero-* keyframes in style.css)
+    // animateHero();
 
     // Misc
     initBurger();
