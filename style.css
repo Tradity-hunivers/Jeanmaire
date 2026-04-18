@@ -2197,4 +2197,22 @@ html, body {
     margin-bottom: 1.25rem;
   }
 
+  /* Breathing zones between sections so the background video is visible.
+     Each section gets a pure-video gap above its content. */
+  .section-services { padding-top: 45vh !important; }
+  .section-drone    { padding-top: 35vh !important; }
+  .section-local    { padding-top: 35vh !important; }
+  .section-why      { padding-top: 35vh !important; }
+  .section-testimonials { padding-top: 30vh !important; }
+
+  /* Services: compact cards, limit heading area so more video breathes below hero */
+  .services-cards {
+    gap: 0.85rem !important;
+    margin-top: 1.25rem !important;
+  }
+  .service-card-home {
+    padding: 1.1rem 1rem !important;
+  }
+  .service-card-home h3 { font-size: 0.98rem !important; }
+  .service-card-home p { font-size: 0.82rem !important; line-height: 1.5 !important; }
 }
