@@ -284,7 +284,7 @@
       const anim = section.dataset.animation;
       const label = section.querySelector('.section-label');
       const heading = section.querySelector('.section-heading');
-      const body = section.querySelector('.section-body');
+      const body = section.querySelectorAll('.section-body');
       const cta = section.querySelector('.section-cta');
 
       switch (anim) {
@@ -301,7 +301,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, x: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.fromTo(heading, { opacity: 0, x: -80 }, { opacity: 1, x: 0, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3');
-          if (body) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           if (cta) tl.to(cta, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3');
           break;
         }
@@ -318,7 +318,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, x: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.fromTo(heading, { opacity: 0, x: 80 }, { opacity: 1, x: 0, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3');
-          if (body) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           if (cta) tl.to(cta, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3');
           break;
         }
@@ -400,7 +400,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.fromTo(heading, { opacity: 0, clipPath: 'inset(100% 0 0 0)' }, { opacity: 1, y: 0, clipPath: 'inset(0% 0 0 0)', duration: 0.9, ease: 'power3.out' }, '-=0.2');
-          if (body) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           if (list) {
             tl.to(list, { opacity: 1, duration: 0.3 }, '-=0.3');
             var items = list.querySelectorAll('.service-line, .service-card-home');
@@ -424,6 +424,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.fromTo(heading, { opacity: 0, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' }, '-=0.2');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           tl.to(cards, {
             opacity: 1,
             scale: 1,
@@ -445,6 +446,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.to(heading, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           if (formWrap) tl.fromTo(formWrap, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3');
           break;
         }
@@ -460,6 +462,7 @@
           });
           if (label) tl.to(label, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
           if (heading) tl.to(heading, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
+          if (body.length) tl.to(body, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.4');
           if (viewport) tl.fromTo(viewport, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3');
           break;
         }
