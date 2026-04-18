@@ -2352,3 +2352,53 @@ html, body {
   /* Drone section: less empty feel */
   .section-drone .drone-media { height: 24vh; }
 }
+
+/* =================== MOBILE SPACING — TIGHTER (≤768px) =================== */
+@media (max-width: 768px) {
+  /* Scoped to scroll-sections so the hero keeps its own padding */
+  .scroll-section {
+    padding: 3rem 1.25rem !important;
+  }
+
+  /* Section 001 — about */
+  .section-about .section-body {
+    margin-bottom: 1.5rem !important;
+  }
+  .section-about {
+    padding-bottom: 2rem !important;
+  }
+
+  /* Section drone — tight button + reduced padding */
+  .section-drone {
+    padding: 3rem 1.25rem !important;
+  }
+  .section-drone .section-cta,
+  .section-drone .btn {
+    margin-top: 1.25rem;
+  }
+
+  /* Headings tighter */
+  .scroll-section h2,
+  .scroll-section .section-heading {
+    margin-bottom: 1rem;
+  }
+  .scroll-section h2 + p,
+  .scroll-section .section-heading + .section-body {
+    margin-bottom: 1.25rem;
+  }
+  .scroll-section .section-body {
+    margin-bottom: 1rem;
+  }
+
+  /* Section headers helpers (used elsewhere) */
+  .section-header,
+  [class*="section-head"] {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* CTAs in scroll-sections glued to their text block */
+  .scroll-section .section-cta,
+  .scroll-section .btn {
+    margin-top: 1.25rem;
+  }
+}
