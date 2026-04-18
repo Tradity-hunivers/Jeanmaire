@@ -2420,9 +2420,9 @@ html, body {
     margin-bottom: 1.25rem !important;
   }
 
-  /* CTAs glued under text — override the desktop -3rem pull */
+  /* CTAs under text — a bit of breathing room */
   .scroll-section .section-cta,
   .scroll-section .btn.section-cta {
-    margin-top: 0.5rem !important;
+    margin-top: 1.25rem !important;
   }
 }
