@@ -1741,7 +1741,6 @@ em {
   object-fit: cover;
   flex-shrink: 0;
   display: block;
-  background: #181824;
 }
 
 @media (max-width: 768px) {
@@ -2172,47 +2171,4 @@ html, body {
 
   /* Drone section: less empty feel */
   .section-drone .drone-media { height: 24vh; }
-}
-
-/* =================== MOBILE: SHORTER TEXT, MORE VIDEO VISIBLE =================== */
-@media (max-width: 900px) {
-  /* Hide secondary paragraphs so the video animation shows through */
-  .section-about .section-body:nth-of-type(2),
-  .section-drone .section-body:nth-of-type(2),
-  .section-local .local-text .section-body:nth-of-type(2) {
-    display: none;
-  }
-
-  /* Cap primary paragraphs to 4 lines max on mobile */
-  .section-about .section-body:first-of-type,
-  .section-drone .section-body:first-of-type,
-  .section-local .local-text .section-body:first-of-type,
-  .section-services > .section-inner > .section-body,
-  .section-why > .section-inner > .section-body {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 1.25rem;
-  }
-
-  /* Breathing zones between sections so the background video is visible.
-     Each section gets a pure-video gap above its content. */
-  .section-services { padding-top: 45vh !important; }
-  .section-drone    { padding-top: 35vh !important; }
-  .section-local    { padding-top: 35vh !important; }
-  .section-why      { padding-top: 35vh !important; }
-  .section-testimonials { padding-top: 30vh !important; }
-
-  /* Services: compact cards, limit heading area so more video breathes below hero */
-  .services-cards {
-    gap: 0.85rem !important;
-    margin-top: 1.25rem !important;
-  }
-  .service-card-home {
-    padding: 1.1rem 1rem !important;
-  }
-  .service-card-home h3 { font-size: 0.98rem !important; }
-  .service-card-home p { font-size: 0.82rem !important; line-height: 1.5 !important; }
 }
