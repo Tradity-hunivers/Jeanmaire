@@ -2355,14 +2355,24 @@ html, body {
 
 /* =================== MOBILE SPACING — TIGHTER (≤768px) =================== */
 @media (max-width: 768px) {
-  /* Scoped to scroll-sections so the hero keeps its own padding */
-  .scroll-section {
-    padding: 2.5rem 1.25rem !important;
+  /* Force sections to hug their content — no 100vh min-height */
+  .scroll-section,
+  .section-about,
+  .section-services,
+  .section-drone,
+  .section-stats,
+  .section-local,
+  .section-why,
+  .section-testimonials,
+  .section-faq,
+  .section-devis {
+    min-height: 0 !important;
+    padding: 2rem 1.25rem !important;
   }
 
   /* Section 001 — about: tight body bottom, tight bottom padding */
   .section-about {
-    padding-bottom: 1.25rem !important;
+    padding: 2rem 1.25rem 1rem !important;
   }
   .section-about .section-body {
     margin-bottom: 0 !important;
@@ -2370,7 +2380,7 @@ html, body {
 
   /* Section drone */
   .section-drone {
-    padding: 2.5rem 1.25rem 1.25rem !important;
+    padding: 1.5rem 1.25rem 1rem !important;
   }
   .section-drone .section-body {
     margin-bottom: 0 !important;
@@ -2378,7 +2388,18 @@ html, body {
 
   /* Services top: less gap after section-about */
   .section-services {
-    padding-top: 1.5rem !important;
+    padding: 1rem 1.25rem 2rem !important;
+  }
+
+  /* Between local (004) and why (005) — tighten both */
+  .section-local {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .section-why {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .section-testimonials {
+    padding: 1.5rem 1.25rem !important;
   }
 
   /* Headings tighter */
