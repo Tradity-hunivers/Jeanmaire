@@ -10,6 +10,7 @@
   const FRAME_SPEED = 2.5;
   const IMAGE_SCALE = 1.0;
   const FRAME_PATH = 'frames/frame_';
+  const IS_MOBILE = window.matchMedia('(max-width: 900px)').matches;
 
   /* ---------- DOM ---------- */
   const canvas = document.getElementById('videoCanvas');
@@ -87,11 +88,17 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    await preloadFrames();
-
-    // Draw first frame
-    drawFrame(0);
-    canvasReady = true;
+    if (IS_MOBILE) {
+      // Skip the heavy scroll-driven frame animation on mobile.
+      canvas.style.display = 'none';
+      if (canvasTint) canvasTint.style.display = 'none';
+      loaderFill.style.width = '100%';
+      loaderPercent.textContent = '100%';
+    } else {
+      await preloadFrames();
+      drawFrame(0);
+      canvasReady = true;
+    }
 
     // Hide loader
     loader.classList.add('done');
@@ -137,6 +144,13 @@
   /* ---------- GSAP SETUP ---------- */
   function initGSAP() {
     gsap.registerPlugin(ScrollTrigger);
+
+    if (IS_MOBILE) {
+      // On mobile: no canvas animation, no forced scrollContainer height.
+      // Just run the section-level animations so content still fades in.
+      animateSections();
+      return;
+    }
 
     /* --- Canvas scroll-driven video with circle wipe --- */
     // Set the scroll container height to accommodate FRAME_SPEED
