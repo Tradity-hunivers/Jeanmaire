@@ -2357,48 +2357,51 @@ html, body {
 @media (max-width: 768px) {
   /* Scoped to scroll-sections so the hero keeps its own padding */
   .scroll-section {
-    padding: 3rem 1.25rem !important;
+    padding: 2.5rem 1.25rem !important;
   }
 
-  /* Section 001 — about */
-  .section-about .section-body {
-    margin-bottom: 1.5rem !important;
-  }
+  /* Section 001 — about: tight body bottom, tight bottom padding */
   .section-about {
-    padding-bottom: 2rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .section-about .section-body {
+    margin-bottom: 0 !important;
   }
 
-  /* Section drone — tight button + reduced padding */
+  /* Section drone */
   .section-drone {
-    padding: 3rem 1.25rem !important;
+    padding: 2.5rem 1.25rem 1.25rem !important;
   }
-  .section-drone .section-cta,
-  .section-drone .btn {
-    margin-top: 1.25rem;
+  .section-drone .section-body {
+    margin-bottom: 0 !important;
+  }
+
+  /* Services top: less gap after section-about */
+  .section-services {
+    padding-top: 1.5rem !important;
   }
 
   /* Headings tighter */
   .scroll-section h2,
   .scroll-section .section-heading {
-    margin-bottom: 1rem;
-  }
-  .scroll-section h2 + p,
-  .scroll-section .section-heading + .section-body {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem !important;
   }
   .scroll-section .section-body {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .align-center .section-body:last-of-type {
+    margin-bottom: 0 !important;
   }
 
   /* Section headers helpers (used elsewhere) */
   .section-header,
   [class*="section-head"] {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.25rem !important;
   }
 
-  /* CTAs in scroll-sections glued to their text block */
+  /* CTAs glued under text — override the desktop -3rem pull */
   .scroll-section .section-cta,
-  .scroll-section .btn {
-    margin-top: 1.25rem;
+  .scroll-section .btn.section-cta {
+    margin-top: 0.5rem !important;
   }
 }
