@@ -49,12 +49,8 @@
     const ih = img.naturalHeight || img.height;
     const cw = canvas.width;
     const ch = canvas.height;
-    // On portrait (mobile), use CONTAIN (Math.min) to show full image without truncation.
-    // On landscape, use COVER (Math.max) to fill viewport without bars.
-    const isPortrait = ch > cw;
-    const scale = isPortrait
-      ? Math.min(cw / iw, ch / ih) * 1.05  // contain-ish with slight over to avoid visible bars
-      : Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
+    // Always COVER so the frame fills the viewport on both desktop and mobile.
+    const scale = Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
     const dw = iw * scale;
     const dh = ih * scale;
     const dx = (cw - dw) / 2;
