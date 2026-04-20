@@ -396,6 +396,19 @@ em {
   color: var(--accent);
 }
 
+.mobile-menu .btn,
+.mobile-menu a.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  color: #fff !important;
+  border-bottom: none;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 /* =================== HERO =================== */
 .hero {
   position: relative;

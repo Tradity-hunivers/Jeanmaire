@@ -319,6 +319,20 @@ em {
   color: var(--ink);
 }
 
+.mobile-menu .btn,
+.mobile-menu a.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.85rem 1.5rem;
+  color: #fff !important;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 /* =================== BUTTONS =================== */
 .btn {
   display: inline-flex;
