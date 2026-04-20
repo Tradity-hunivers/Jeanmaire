@@ -557,13 +557,44 @@
       try { localStorage.setItem(key, JSON.stringify(data)); } catch (e) {}
     });
 
-    // Clear on submit
-    form.addEventListener('submit', function (e) {
+    // Submit via fetch to Web3Forms
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      try { localStorage.removeItem(key); } catch (e) {}
-      // Could send via fetch here
-      alert('Merci ! Votre demande de devis a bien été envoyée. Nous vous recontacterons sous 48h.');
-      form.reset();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var successEl = document.getElementById('devisSuccess');
+      var originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Envoi en cours…</span>';
+      }
+      try {
+        var formData = new FormData(form);
+        var response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        var result = await response.json();
+        if (result.success) {
+          try { localStorage.removeItem(key); } catch (e2) {}
+          // Hide form fields, show success
+          Array.from(form.children).forEach(function (child) {
+            if (child !== successEl && !child.matches('input[type="hidden"], input[name="botcheck"]')) {
+              child.style.display = 'none';
+            }
+          });
+          if (successEl) successEl.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Erreur');
+        }
+      } catch (err) {
+        alert("Désolé, l'envoi a échoué. Contactez-nous directement au 06 62 13 44 15.");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }
     });
   }
 

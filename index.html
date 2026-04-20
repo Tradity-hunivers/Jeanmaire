@@ -603,7 +603,16 @@
       <h2 class="section-heading">Décrivez votre <em>projet</em></h2>
       <p class="section-body">Remplissez le formulaire ci-dessous et recevez un devis détaillé sous 48 heures. Déplacement gratuit, inspection drone offerte, aucun engagement.</p>
       <div class="devis-form-wrap">
-        <form class="devis-form" id="devisForm" action="#" method="POST">
+        <form class="devis-form" id="devisForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="866bef65-fc18-4810-84d4-b712e37db995">
+          <input type="hidden" name="subject" value="Nouveau devis Bauer Couverture">
+          <input type="hidden" name="from_name" value="Site Bauer Couverture">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="form-success" id="devisSuccess" style="display:none">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            <h3>Merci !</h3>
+            <p>Votre demande de devis a bien été envoyée. Nous vous recontactons sous 48h.</p>
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label for="nom">Nom complet *</label>
