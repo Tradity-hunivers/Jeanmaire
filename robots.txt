@@ -4,4 +4,4 @@ Disallow: /api/
 Disallow: /*.backup$
 
 # Sitemap
-Sitemap: https://bauer-couvreur-zinguerie.fr/sitemap.xml
+Sitemap: https://toiture-jeanmaire.fr/sitemap.xml

@@ -1,5 +1,5 @@
 /* =============================================
-   BAUER COUVERTURE — Pages Stylesheet
+   JEANMAIRE COUVERTURE — Pages Stylesheet
    Dark theme matching homepage
    Fonts: Space Grotesk (display) + Poppins (body/italic) + JetBrains Mono (labels)
    ============================================= */
@@ -12,9 +12,9 @@
   --ink: #E8E4DF;
   --text-light: #E8E4DF;
   --muted: #E8E4DF;
-  --accent: #DC2626;
-  --accent-light: rgba(220,38,38,.12);
-  --accent-dark: #B91C1C;
+  --accent: #046bd2;
+  --accent-light: rgba(4,107,210,.12);
+  --accent-dark: #034E96;
   --card: #161616;
   --border: rgba(232,228,223,.08);
   --radius: 16px;
@@ -43,10 +43,10 @@ html {
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(ellipse 65% 45% at 15% 8%, rgba(220,38,38,0.18), transparent 60%),
-    radial-gradient(ellipse 55% 40% at 90% 35%, rgba(220,38,38,0.1), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 40% 70%, rgba(220,38,38,0.12), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 95% 95%, rgba(220,38,38,0.08), transparent 60%),
+    radial-gradient(ellipse 65% 45% at 15% 8%, rgba(4,107,210,0.18), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 90% 35%, rgba(4,107,210,0.1), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 40% 70%, rgba(4,107,210,0.12), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 95% 95%, rgba(4,107,210,0.08), transparent 60%),
     #0A0A0A;
   background-attachment: fixed;
   color: var(--ink);
@@ -1588,8 +1588,8 @@ em {
 }
 
 .article-body .article-tip {
-  background: rgba(220,38,38,0.08);
-  border: 1px solid rgba(220,38,38,0.2);
+  background: rgba(4,107,210,0.08);
+  border: 1px solid rgba(4,107,210,0.2);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem 0;

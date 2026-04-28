@@ -80,7 +80,7 @@
         // glow halo
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(220, 38, 38, ' + (a * 0.12).toFixed(3) + ')';
+        ctx.fillStyle = 'rgba(4,107,210, ' + (a * 0.12).toFixed(3) + ')';
         ctx.fill();
 
         // core dot

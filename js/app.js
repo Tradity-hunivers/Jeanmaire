@@ -1,117 +1,40 @@
 /* =============================================
-   BAUER COUVERTURE — Scroll-Driven Canvas + GSAP
+   JEANMAIRE COUVERTURE — Hero parallax + GSAP sections
    ============================================= */
 
 (function () {
   'use strict';
 
   /* ---------- CONFIG ---------- */
-  const FRAME_COUNT = 145;
-  const FRAME_SPEED = 2.5;
-  const IMAGE_SCALE = 1.0;
-  const FRAME_PATH = 'frames/frame_';
   const IS_MOBILE = window.matchMedia('(max-width: 900px)').matches;
+  const PARALLAX_INTENSITY = 0.30; // 0 = none, 1 = 1:1 with scroll
+  const PARALLAX_INTENSITY_MOBILE = 0.18;
 
   /* ---------- DOM ---------- */
-  const canvas = document.getElementById('videoCanvas');
-  const ctx = canvas.getContext('2d');
   const loader = document.getElementById('loader');
   const loaderFill = document.getElementById('loaderFill');
   const loaderPercent = document.getElementById('loaderPercent');
   const darkOverlay = document.getElementById('darkOverlay');
-  const canvasTint = document.getElementById('canvasTint');
   const marquee = document.getElementById('marquee');
-  const scrollContainer = document.getElementById('scrollContainer');
-
-  /* ---------- STATE ---------- */
-  const images = [];
-  let loaded = 0;
-  let currentFrame = 0;
-  let canvasReady = false;
-
-  /* ---------- HELPERS ---------- */
-  function padNum(n) {
-    return String(n).padStart(4, '0');
-  }
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    if (images[currentFrame]) drawFrame(currentFrame);
-  }
-
-  function drawFrame(idx) {
-    const img = images[idx];
-    if (!img || !img.complete) return;
-    ctx.fillStyle = '#0D0D14'; // match --bg-dark
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const iw = img.naturalWidth || img.width;
-    const ih = img.naturalHeight || img.height;
-    const cw = canvas.width;
-    const ch = canvas.height;
-    // On portrait (mobile), use CONTAIN (Math.min) to show full image without truncation.
-    // On landscape, use COVER (Math.max) to fill viewport without bars.
-    const isPortrait = ch > cw;
-    const scale = isPortrait
-      ? Math.min(cw / iw, ch / ih) * 1.05  // contain-ish with slight over to avoid visible bars
-      : Math.max(cw / iw, ch / ih) * IMAGE_SCALE;
-    const dw = iw * scale;
-    const dh = ih * scale;
-    const dx = (cw - dw) / 2;
-    const dy = (ch - dh) / 2;
-    ctx.drawImage(img, dx, dy, dw, dh);
-  }
-
-  /* ---------- PRELOAD FRAMES ---------- */
-  function preloadFrames() {
-    return new Promise((resolve) => {
-      for (let i = 1; i <= FRAME_COUNT; i++) {
-        const img = new Image();
-        img.src = FRAME_PATH + padNum(i) + '.jpg';
-        img.onload = img.onerror = function () {
-          loaded++;
-          const pct = Math.round((loaded / FRAME_COUNT) * 100);
-          loaderFill.style.width = pct + '%';
-          loaderPercent.textContent = pct + '%';
-          if (loaded >= FRAME_COUNT) {
-            resolve();
-          }
-        };
-        images[i - 1] = img;
-      }
-    });
-  }
+  const heroBg = document.getElementById('heroBg');
+  const heroSection = document.getElementById('hero');
 
   /* ---------- INIT ---------- */
-  async function init() {
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    if (IS_MOBILE) {
-      // Skip the heavy scroll-driven frame animation on mobile.
-      canvas.style.display = 'none';
-      if (canvasTint) canvasTint.style.display = 'none';
-      loaderFill.style.width = '100%';
-      loaderPercent.textContent = '100%';
-    } else {
-      await preloadFrames();
-      drawFrame(0);
-      canvasReady = true;
+  function init() {
+    // Loader is instant now that there are no frames to preload
+    if (loaderFill) loaderFill.style.width = '100%';
+    if (loaderPercent) loaderPercent.textContent = '100%';
+    if (loader) {
+      loader.classList.add('done');
+      setTimeout(function () { loader.style.display = 'none'; }, 500);
     }
 
-    // Hide loader
-    loader.classList.add('done');
-    setTimeout(() => { loader.style.display = 'none'; }, 700);
-
-    // Init Lenis
+    // Smooth scroll + section animations
     initLenis();
-
-    // Init GSAP
     initGSAP();
 
-    // Hero entrance animation now handled by CSS (see .hero-* keyframes in style.css)
-    // animateHero();
+    // Parallax background for hero
+    initHeroParallax();
 
     // Misc
     initBurger();
@@ -124,9 +47,44 @@
     initTestiCarousel();
   }
 
+  /* ---------- HERO PARALLAX ---------- */
+  function initHeroParallax() {
+    if (!heroBg || !heroSection) return;
+
+    var amp = IS_MOBILE ? PARALLAX_INTENSITY_MOBILE : PARALLAX_INTENSITY;
+    var heroHeight = heroSection.offsetHeight;
+    var ticking = false;
+
+    function update() {
+      var scrolled = window.scrollY || window.pageYOffset;
+      // only animate while hero is roughly in view
+      if (scrolled > heroHeight * 1.2) {
+        ticking = false;
+        return;
+      }
+      var offset = scrolled * amp;
+      heroBg.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0) scale(1.05)';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      heroHeight = heroSection.offsetHeight;
+    });
+
+    update();
+  }
+
   /* ---------- LENIS ---------- */
   let lenis;
   function initLenis() {
+    if (typeof Lenis === 'undefined') return;
     lenis = new Lenis({
       duration: 1.2,
       easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
@@ -134,109 +92,38 @@
       smoothWheel: true,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(function (time) {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+    if (typeof gsap !== 'undefined') {
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    }
   }
 
   /* ---------- GSAP SETUP ---------- */
   function initGSAP() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    if (IS_MOBILE) {
-      // On mobile: no canvas animation, no forced scrollContainer height.
-      // Just run the section-level animations so content still fades in.
-      animateSections();
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+      // Without GSAP, just reveal everything (graceful fallback)
+      document.querySelectorAll('.scroll-section [class*="opacity"]').forEach(function (el) {
+        el.style.opacity = 1;
+      });
       return;
     }
+    gsap.registerPlugin(ScrollTrigger);
 
-    /* --- Canvas scroll-driven video with circle wipe --- */
-    // Set the scroll container height to accommodate FRAME_SPEED
-    const scrollH = FRAME_COUNT * FRAME_SPEED * (window.innerHeight / 100);
-    scrollContainer.style.minHeight = Math.max(scrollH, 800 * parseFloat(getComputedStyle(document.documentElement).fontSize) / 16) + 'px';
+    // Marquee fade-in once page scrolls past hero
+    if (marquee) {
+      gsap.set(marquee, { opacity: 0 });
+      ScrollTrigger.create({
+        trigger: '#hero',
+        start: 'bottom 80%',
+        end: 'bottom top',
+        onEnter: function () { gsap.to(marquee, { opacity: 1, duration: 0.6 }); },
+        onLeaveBack: function () { gsap.to(marquee, { opacity: 0, duration: 0.4 }); },
+      });
+    }
 
-    // Actually let's set a concrete min-height in vh
-    scrollContainer.style.minHeight = '520vh';
-
-    // Canvas starts hidden, reveals immediately on first scroll
-    gsap.set(canvas, { opacity: 0, clipPath: 'circle(0% at 50% 50%)' });
-
-    // Hero -> Canvas: starts as soon as scroll begins
-    ScrollTrigger.create({
-      trigger: '#hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true,
-      onUpdate: function (self) {
-        const p = self.progress;
-        var op = Math.min(p * 3, 1);
-        canvas.style.opacity = op;
-        if (canvasTint) canvasTint.style.opacity = op;
-        var radius = Math.min(p * 2.5 * 75, 80);
-        canvas.style.clipPath = 'circle(' + radius + '% at 50% 50%)';
-        if (canvasTint) canvasTint.style.clipPath = canvas.style.clipPath;
-        if (p > 0.5) {
-          canvas.style.clipPath = 'none';
-          if (canvasTint) canvasTint.style.clipPath = 'none';
-        }
-      },
-    });
-
-    // Frame scrubbing
-    ScrollTrigger.create({
-      trigger: scrollContainer,
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.5,
-      onUpdate: function (self) {
-        if (!canvasReady) return;
-        var p = self.progress;
-        var frame = Math.min(
-          FRAME_COUNT - 1,
-          Math.floor(p * FRAME_COUNT * FRAME_SPEED)
-        );
-        var clampedFrame = Math.min(frame, FRAME_COUNT - 1);
-        if (clampedFrame !== currentFrame) {
-          currentFrame = clampedFrame;
-          drawFrame(currentFrame);
-        }
-
-        // Circle wipe OUT when video is done (last 15% of scroll)
-        var videoEndPoint = 1.0 / FRAME_SPEED; // ~0.4, when all frames played
-        var wipeOutStart = videoEndPoint + 0.05;
-        var wipeOutEnd = wipeOutStart + 0.12;
-        if (p > wipeOutStart && p <= wipeOutEnd) {
-          var wipeProgress = (p - wipeOutStart) / (wipeOutEnd - wipeOutStart);
-          var radius = 80 * (1 - wipeProgress);
-          canvas.style.clipPath = 'circle(' + radius + '% at 50% 50%)';
-          if (canvasTint) canvasTint.style.clipPath = canvas.style.clipPath;
-          canvas.style.opacity = 1 - wipeProgress;
-          if (canvasTint) canvasTint.style.opacity = canvas.style.opacity;
-        } else if (p > wipeOutEnd) {
-          canvas.style.opacity = 0;
-          if (canvasTint) canvasTint.style.opacity = 0;
-        } else if (p > 0.05) {
-          canvas.style.clipPath = 'none';
-          if (canvasTint) canvasTint.style.clipPath = 'none';
-        }
-      },
-    });
-
-    // Marquee visibility
-    gsap.set(marquee, { opacity: 0 });
-    ScrollTrigger.create({
-      trigger: scrollContainer,
-      start: 'top 80%',
-      end: 'bottom 20%',
-      onEnter: function () { gsap.to(marquee, { opacity: 1, duration: 0.6 }); },
-      onLeave: function () { gsap.to(marquee, { opacity: 0, duration: 0.4 }); },
-      onEnterBack: function () { gsap.to(marquee, { opacity: 1, duration: 0.6 }); },
-      onLeaveBack: function () { gsap.to(marquee, { opacity: 0, duration: 0.4 }); },
-    });
-
-    /* --- Section animations --- */
     animateSections();
   }
 
@@ -535,7 +422,7 @@
   function initFormPersist() {
     var form = document.getElementById('devisForm');
     if (!form) return;
-    var key = 'bauer_devis';
+    var key = 'jeanmaire_devis';
 
     // Restore
     try {
@@ -589,7 +476,7 @@
           throw new Error(result.message || 'Erreur');
         }
       } catch (err) {
-        alert("Désolé, l'envoi a échoué. Contactez-nous directement au 06 62 13 44 15.");
+        alert("Désolé, l'envoi a échoué. Contactez-nous directement au 06 50 71 51 23.");
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
