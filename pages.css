@@ -6,17 +6,20 @@
 
 /* =================== VARIABLES =================== */
 :root {
-  --bg: #0D0D14;
-  --bg-darker: #080810;
-  --bg-accent: #161616;
-  --ink: #E8E4DF;
-  --text-light: #E8E4DF;
-  --muted: #E8E4DF;
-  --accent: #046bd2;
-  --accent-light: rgba(4,107,210,.12);
-  --accent-dark: #034E96;
-  --card: #161616;
-  --border: rgba(232,228,223,.08);
+  /* Light premium palette — bleu minuit + doré */
+  --bg: #F9FBFD;
+  --bg-darker: #F1F5FA;
+  --bg-accent: #FFFFFF;
+  --ink: #060E18;
+  --text-light: #060E18;
+  --muted: #49729F;
+  --accent: #B8926A;
+  --accent-light: rgba(184,146,106,.12);
+  --accent-dark: #9A754F;
+  --card: #FFFFFF;
+  --border: #CEDDEE;
+  --primary-dark: #1A2D42;
+  --secondary: #49729F;
   --radius: 16px;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Poppins', sans-serif;
@@ -43,11 +46,11 @@ html {
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(ellipse 65% 45% at 15% 8%, rgba(4,107,210,0.18), transparent 60%),
-    radial-gradient(ellipse 55% 40% at 90% 35%, rgba(4,107,210,0.1), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 40% 70%, rgba(4,107,210,0.12), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 95% 95%, rgba(4,107,210,0.08), transparent 60%),
-    #0A0A0A;
+    radial-gradient(ellipse 65% 45% at 15% 8%, rgba(184,146,106,0.18), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 90% 35%, rgba(184,146,106,0.1), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 40% 70%, rgba(184,146,106,0.12), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 95% 95%, rgba(184,146,106,0.08), transparent 60%),
+    #F9FBFD;
   background-attachment: fixed;
   color: var(--ink);
   overflow-x: hidden;
@@ -75,7 +78,7 @@ body {
 /* Sections with solid bg become semi-transparent so gradient shows through */
 .hero { background: rgba(10,10,10,0.2) !important; }
 .services, .drone, .cta-final { background: transparent; }
-.site-footer { background: rgba(8,8,16,0.85); }
+.site-footer { background: rgba(249,251,253,0.85); }
 
 a {
   color: inherit;
@@ -123,11 +126,11 @@ em {
 }
 
 .site-header.scrolled {
-  background: rgba(13,13,20,.85);
+  background: rgba(249,251,253,.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: .65rem 0;
-  box-shadow: 0 1px 0 rgba(232,228,223,.06);
+  box-shadow: 0 1px 0 rgba(6,14,24,.06);
 }
 
 .header-inner {
@@ -250,7 +253,7 @@ em {
 
 .dropdown-menu a:hover {
   color: var(--ink);
-  background: rgba(232,228,223,.05);
+  background: rgba(6,14,24,.05);
 }
 
 /* Header right */
@@ -395,7 +398,7 @@ em {
 .btn-outline {
   background: transparent;
   color: var(--ink);
-  border-color: rgba(232,228,223,.15);
+  border-color: rgba(6,14,24,.15);
 }
 
 .btn-outline:hover {
@@ -1128,7 +1131,7 @@ em {
 
 /* =================== FOOTER =================== */
 .site-footer {
-  background: var(--bg-darker, #080810);
+  background: var(--bg-darker, #F1F5FA);
   padding: 4rem 0 2rem;
   border-top: 1px solid var(--border);
 }
@@ -1535,8 +1538,8 @@ em {
 }
 
 .article-body .article-tip {
-  background: rgba(4,107,210,0.08);
-  border: 1px solid rgba(4,107,210,0.2);
+  background: rgba(184,146,106,0.08);
+  border: 1px solid rgba(184,146,106,0.2);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem 0;
@@ -1683,12 +1686,12 @@ em {
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  background: rgba(22,22,28,.65);
+  background: rgba(255,255,255,.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232,228,223,.10);
+  border: 1px solid rgba(6,14,24,.10);
   border-radius: 0;     /* sharp corners — the plus icons mark them */
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,.55), 0 0 0 1px rgba(4,107,210,.06);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.55), 0 0 0 1px rgba(184,146,106,.06);
   overflow: visible;
 }
 
@@ -1699,7 +1702,7 @@ em {
   height: 24px;
   color: var(--accent);
   z-index: 2;
-  filter: drop-shadow(0 0 6px rgba(4,107,210,.5));
+  filter: drop-shadow(0 0 6px rgba(184,146,106,.5));
 }
 .contact-card .cc-plus-tl { top: -12px; left: -12px; }
 .contact-card .cc-plus-tr { top: -12px; right: -12px; }
@@ -1714,7 +1717,7 @@ em {
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  border-right: 1px solid rgba(232,228,223,.08);
+  border-right: 1px solid rgba(6,14,24,.08);
 }
 
 .contact-card .cc-eyebrow {
@@ -1723,8 +1726,8 @@ em {
   gap: .5rem;
   padding: .35rem .9rem;
   border-radius: 999px;
-  background: rgba(4,107,210,.12);
-  border: 1px solid rgba(4,107,210,.35);
+  background: rgba(184,146,106,.12);
+  border: 1px solid rgba(184,146,106,.35);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -1750,7 +1753,7 @@ em {
 }
 
 .contact-card .cc-desc {
-  color: rgba(232,228,223,.72);
+  color: rgba(6,14,24,.72);
   font-size: clamp(.95rem, 1.2vw, 1.05rem);
   line-height: 1.65;
   max-width: 56ch;
@@ -1777,8 +1780,8 @@ em {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(4,107,210,.08);
-  border: 1px solid rgba(4,107,210,.2);
+  background: rgba(184,146,106,.08);
+  border: 1px solid rgba(184,146,106,.2);
   color: var(--accent);
   display: inline-flex;
   align-items: center;
@@ -1801,7 +1804,7 @@ em {
 .contact-card .cc-info-value {
   font-family: var(--font-mono);
   font-size: .78rem;
-  color: rgba(232,228,223,.6);
+  color: rgba(6,14,24,.6);
   letter-spacing: .02em;
   text-decoration: none;
   display: block;
@@ -1814,7 +1817,7 @@ em {
 
 /* Right side — form */
 .contact-card .cc-form-wrap {
-  background: rgba(8,8,16,.45);
+  background: rgba(249,251,253,.45);
   padding: clamp(1.5rem, 3vw, 2rem);
   display: flex;
   align-items: flex-start;
@@ -1844,8 +1847,8 @@ em {
 .contact-card .cc-field select,
 .contact-card .cc-field textarea {
   width: 100%;
-  background: rgba(13,13,20,.7);
-  border: 1px solid rgba(232,228,223,.10);
+  background: rgba(249,251,253,.7);
+  border: 1px solid rgba(6,14,24,.10);
   border-radius: 8px;
   padding: .65rem .85rem;
   color: var(--ink);
@@ -1856,14 +1859,14 @@ em {
 }
 .contact-card .cc-field input::placeholder,
 .contact-card .cc-field textarea::placeholder {
-  color: rgba(232,228,223,.35);
+  color: rgba(6,14,24,.35);
 }
 .contact-card .cc-field input:focus,
 .contact-card .cc-field select:focus,
 .contact-card .cc-field textarea:focus {
   border-color: var(--accent);
-  background: rgba(13,13,20,.9);
-  box-shadow: 0 0 0 3px rgba(4,107,210,.18);
+  background: rgba(249,251,253,.9);
+  box-shadow: 0 0 0 3px rgba(184,146,106,.18);
 }
 .contact-card .cc-field textarea {
   min-height: 90px;
@@ -1896,12 +1899,12 @@ em {
   border-radius: 8px;
   cursor: pointer;
   transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
-  box-shadow: 0 8px 22px -8px rgba(4,107,210,.55);
+  box-shadow: 0 8px 22px -8px rgba(184,146,106,.55);
 }
 .contact-card .cc-submit:hover:not(:disabled) {
   background: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 14px 30px -8px rgba(4,107,210,.7);
+  box-shadow: 0 14px 30px -8px rgba(184,146,106,.7);
 }
 .contact-card .cc-submit:active { transform: translateY(0); }
 .contact-card .cc-submit:disabled { opacity: .7; cursor: not-allowed; }
@@ -1910,8 +1913,8 @@ em {
 .contact-card .cc-form .form-success {
   text-align: center;
   padding: 2.5rem 1.25rem;
-  background: rgba(4,107,210,.08);
-  border: 1px solid rgba(4,107,210,.3);
+  background: rgba(184,146,106,.08);
+  border: 1px solid rgba(184,146,106,.3);
   border-radius: 10px;
   width: 100%;
 }
@@ -1925,7 +1928,7 @@ em {
 }
 .contact-card .cc-form .form-success p {
   font-size: .85rem;
-  color: rgba(232,228,223,.7);
+  color: rgba(6,14,24,.7);
   line-height: 1.5;
 }
 
@@ -1936,7 +1939,7 @@ em {
   }
   .contact-card .cc-info {
     border-right: none;
-    border-bottom: 1px solid rgba(232,228,223,.08);
+    border-bottom: 1px solid rgba(6,14,24,.08);
   }
 }
 @media (max-width: 600px) {
@@ -1998,7 +2001,7 @@ em {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(232,228,223,.6);
+  color: rgba(6,14,24,.6);
   margin: 0;
 }
 
@@ -2037,7 +2040,7 @@ em {
   width: 100%;
   padding: .65rem .85rem;
   background: transparent;
-  border: 1px solid rgba(232,228,223,.18);
+  border: 1px solid rgba(6,14,24,.18);
   border-radius: 8px;
   outline: none;
   font-family: var(--font-body);
@@ -2048,13 +2051,13 @@ em {
 }
 .cmf-field input::placeholder,
 .cmf-field textarea::placeholder {
-  color: rgba(232,228,223,.35);
+  color: rgba(6,14,24,.35);
 }
 .cmf-field input:focus,
 .cmf-field select:focus,
 .cmf-field textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(4,107,210,.18);
+  box-shadow: 0 0 0 3px rgba(184,146,106,.18);
 }
 
 .cmf-field textarea {
@@ -2085,10 +2088,10 @@ em {
   align-items: center;
   height: 1.5rem;
   padding-right: .5rem;
-  border-right: 1px solid rgba(232,228,223,.18);
+  border-right: 1px solid rgba(6,14,24,.18);
   font-family: var(--font-mono);
   font-size: .85rem;
-  color: rgba(232,228,223,.7);
+  color: rgba(6,14,24,.7);
   pointer-events: none;
   z-index: 1;
 }
@@ -2110,12 +2113,12 @@ em {
   cursor: pointer;
   transition: background .15s var(--ease), transform .15s var(--ease), box-shadow .15s var(--ease);
   margin-top: .35rem;
-  box-shadow: 0 6px 18px -8px rgba(4,107,210,.55);
+  box-shadow: 0 6px 18px -8px rgba(184,146,106,.55);
 }
 .cmf-submit:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -8px rgba(4,107,210,.65);
+  box-shadow: 0 12px 24px -8px rgba(184,146,106,.65);
 }
 .cmf-submit:active {
   background: var(--accent);
@@ -2130,8 +2133,8 @@ em {
 .contact-min-form .form-success {
   text-align: center;
   padding: 2rem 1.25rem;
-  background: rgba(4,107,210,.08);
-  border: 1px solid rgba(4,107,210,.3);
+  background: rgba(184,146,106,.08);
+  border: 1px solid rgba(184,146,106,.3);
   border-radius: 12px;
 }
 .contact-min-form .form-success svg { margin-bottom: .8rem; }
@@ -2144,7 +2147,7 @@ em {
 }
 .contact-min-form .form-success p {
   font-size: .9rem;
-  color: rgba(232,228,223,.65);
+  color: rgba(6,14,24,.65);
   margin: 0;
 }
 
@@ -2157,7 +2160,7 @@ em {
   gap: .75rem 1.25rem;
   font-family: var(--font-mono);
   font-size: .8rem;
-  color: rgba(232,228,223,.55);
+  color: rgba(6,14,24,.55);
 }
 .contact-min-direct-item {
   display: inline-flex;
