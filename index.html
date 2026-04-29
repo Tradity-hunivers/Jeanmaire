@@ -339,71 +339,108 @@
 <!-- SCROLL CONTAINER -->
 <div id="scrollContainer">
 
-  <!-- Section 1: Présentation (centre, slide-left) -->
-  <section class="scroll-section section-about" data-animation="slide-left">
-    <div class="section-inner align-center">
-      <p class="section-label">001 / Notre savoir-faire</p>
-      <h2 class="section-heading">Plus de 15 ans au service de vos <em>toitures</em></h2>
-      <p class="section-body">Couvreur de référence à Bois-le-Roi depuis plus de 15 ans. Toiture, zinguerie, charpente — chaque chantier démarre par un diagnostic drone gratuit pour un devis transparent et sans surprise.</p>
-      <a href="couverture.html" class="btn btn-outline section-cta"><span>Découvrir nos prestations</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </section>
-
-  <!-- Section 2: Services gauche→droite (clip-reveal) -->
+  <!-- Section 2: Services horizontal carousel -->
   <section class="scroll-section section-services" data-animation="clip-reveal">
     <div class="section-inner align-center">
       <p class="section-label">002 / Nos expertises</p>
       <h2 class="section-heading">Tous les métiers de la <em>toiture</em></h2>
       <p class="section-body">De la pose de couverture neuve au nettoyage de toiture en passant par la zinguerie, le traitement de charpente, l'isolation thermique et l'installation de fenêtres de toit — nous maîtrisons l'ensemble des corps de métier pour prendre en charge votre projet de A à Z.</p>
-      <div class="services-cards">
-        <a href="couverture.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
-          </div>
-          <h3>Couverture générale</h3>
-          <p>Pose et rénovation de toitures traditionnelles (tuiles, ardoises) ou modernes (bac acier), pour une couverture étanche et esthétique, conforme aux DTU et durable dans le temps.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="charpente.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3>Traitement de charpente</h3>
-          <p>Inspection, traitement préventif et curatif contre insectes xylophages et champignons, garantissant la solidité de votre charpente et la pérennité de votre couverture.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="fenetres-toit.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          </div>
-          <h3>Installation de fenêtres de toit</h3>
-          <p>Création d'ouvertures et pose de fenêtres de toit (type Velux) pour apporter lumière, ventilation et isolation performante à vos combles, tout en respectant l'intégrité de votre toit.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="isolation.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-          </div>
-          <h3>Isolation &amp; étanchéité</h3>
-          <p>Application de membranes EPDM, bitume ou systèmes multicouches sur toits-terrasses et pans de toit, pour isoler thermiquement votre bâtiment et garantir une couverture parfaitement étanche.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="zinguerie.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Zinguerie</h3>
-          <p>Fabrication et pose de noues, rives et descentes en zinc ou aluminium, assurant l'évacuation des eaux pluviales de votre couverture et protégeant efficacement votre toit.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="nettoyage.html" class="service-card-home">
-          <div class="service-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-7 7 7v11M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Nettoyage de toiture et terrasse</h3>
-          <p>Démoussage, nettoyage haute pression et hydrofugation pour conserver la performance de votre couverture, prévenir les dégradations et prolonger la durée de vie de votre toit.</p>
-          <span class="service-card-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
+
+      <div class="svc-carousel" id="svcCarousel" role="region" aria-roledescription="carousel" aria-label="Nos services">
+        <div class="svc-track" id="svcTrack">
+
+          <a href="couverture.html" class="svc-card svc-card-1">
+            <div class="svc-card-top">
+              <span class="svc-num">( 001 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Couverture générale</h3>
+              <p>Pose et rénovation de toitures traditionnelles (tuiles, ardoises) ou modernes (bac acier), pour une couverture étanche et esthétique, conforme aux DTU et durable dans le temps.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="charpente.html" class="svc-card svc-card-2">
+            <div class="svc-card-top">
+              <span class="svc-num">( 002 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Traitement de charpente</h3>
+              <p>Inspection, traitement préventif et curatif contre insectes xylophages et champignons, garantissant la solidité de votre charpente et la pérennité de votre couverture.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="fenetres-toit.html" class="svc-card svc-card-3">
+            <div class="svc-card-top">
+              <span class="svc-num">( 003 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Installation de fenêtres de toit</h3>
+              <p>Création d'ouvertures et pose de fenêtres de toit (type Velux) pour apporter lumière, ventilation et isolation performante à vos combles, tout en respectant l'intégrité de votre toit.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="isolation.html" class="svc-card svc-card-4">
+            <div class="svc-card-top">
+              <span class="svc-num">( 004 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Isolation &amp; étanchéité</h3>
+              <p>Application de membranes EPDM, bitume ou systèmes multicouches sur toits-terrasses et pans de toit, pour isoler thermiquement votre bâtiment et garantir une couverture parfaitement étanche.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="zinguerie.html" class="svc-card svc-card-5">
+            <div class="svc-card-top">
+              <span class="svc-num">( 005 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Zinguerie</h3>
+              <p>Fabrication et pose de noues, rives et descentes en zinc ou aluminium, assurant l'évacuation des eaux pluviales de votre couverture et protégeant efficacement votre toit.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="nettoyage.html" class="svc-card svc-card-6">
+            <div class="svc-card-top">
+              <span class="svc-num">( 006 )</span>
+              <div class="svc-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-7 7 7v11M9 21v-6h6v6"/></svg>
+              </div>
+            </div>
+            <div class="svc-card-bot">
+              <h3>Nettoyage de toiture et terrasse</h3>
+              <p>Démoussage, nettoyage haute pression et hydrofugation pour conserver la performance de votre couverture, prévenir les dégradations et prolonger la durée de vie de votre toit.</p>
+              <span class="svc-link">En savoir plus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+
+        <button type="button" class="svc-nav svc-prev" id="svcPrev" aria-label="Service précédent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" class="svc-nav svc-next" id="svcNext" aria-label="Service suivant">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -425,106 +462,262 @@
   <section class="scroll-section section-stats" data-animation="stagger-up">
     <div class="section-inner align-center">
       <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-circle">
-            <svg viewBox="0 0 160 160" aria-hidden="true">
-              <circle class="stat-circle-bg" cx="80" cy="80" r="70"></circle>
-              <circle class="stat-circle-fg" cx="80" cy="80" r="70" stroke-dasharray="439.82" stroke-dashoffset="439.82"></circle>
-            </svg>
-            <div class="stat-circle-value">
-              <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
-            </div>
+
+        <div class="stat-item stat-card-modern" role="region" aria-label="Années d'expérience : 10. Évolution +1 cette année.">
+          <div class="stat-card-value">
+            <span class="stat-number" data-target="10">0</span><span class="stat-card-suffix">+</span>
           </div>
-          <span class="stat-label">Années d'expérience</span>
-        </div>
-        <div class="stat-item">
-          <div class="stat-circle">
-            <svg viewBox="0 0 160 160" aria-hidden="true">
-              <circle class="stat-circle-bg" cx="80" cy="80" r="70"></circle>
-              <circle class="stat-circle-fg" cx="80" cy="80" r="70" stroke-dasharray="439.82" stroke-dashoffset="439.82"></circle>
-            </svg>
-            <div class="stat-circle-value">
-              <span class="stat-number" data-target="150">0</span><span class="stat-suffix">+</span>
-            </div>
+          <p class="stat-card-title">Années d'expérience</p>
+          <div class="stat-card-trend trend-up">
+            <span class="trend-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+            <p class="trend-text"><span class="trend-value">+1</span><span class="trend-desc">cette année</span></p>
           </div>
-          <span class="stat-label">Toitures rénovées</span>
         </div>
-        <div class="stat-item">
-          <div class="stat-circle">
-            <svg viewBox="0 0 160 160" aria-hidden="true">
-              <circle class="stat-circle-bg" cx="80" cy="80" r="70"></circle>
-              <circle class="stat-circle-fg" cx="80" cy="80" r="70" stroke-dasharray="439.82" stroke-dashoffset="439.82"></circle>
-            </svg>
-            <div class="stat-circle-value">
-              <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
-            </div>
+
+        <div class="stat-item stat-card-modern" role="region" aria-label="Toitures rénovées : 150. Évolution +22 cette année.">
+          <div class="stat-card-value">
+            <span class="stat-number" data-target="150">0</span><span class="stat-card-suffix">+</span>
           </div>
-          <span class="stat-label">Clients satisfaits</span>
+          <p class="stat-card-title">Toitures rénovées</p>
+          <div class="stat-card-trend trend-up">
+            <span class="trend-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+            <p class="trend-text"><span class="trend-value">+22</span><span class="trend-desc">cette année</span></p>
+          </div>
         </div>
+
+        <div class="stat-item stat-card-modern" role="region" aria-label="Clients satisfaits : 98%. Évolution +2 points vs 2025.">
+          <div class="stat-card-value">
+            <span class="stat-number" data-target="98">0</span><span class="stat-card-suffix">%</span>
+          </div>
+          <p class="stat-card-title">Clients satisfaits</p>
+          <div class="stat-card-trend trend-up">
+            <span class="trend-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+            <p class="trend-text"><span class="trend-value">+2 pts</span><span class="trend-desc">vs 2025</span></p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Section 5: Zone d'intervention (slide-left) -->
-  <section class="scroll-section section-local" data-animation="slide-left">
+  <!-- Section 5: Zone d'intervention — image + cities grid -->
+  <section class="scroll-section section-local section-local-v2" data-animation="slide-left">
     <div class="section-inner">
-      <div class="local-grid">
-        <div class="local-image">
+
+      <div class="local-v2-grid">
+
+        <!-- Left: image + radius badge -->
+        <div class="local-v2-image">
           <img src="images/toiture-2.png" alt="Chantier couvreur Bois le roi - toiture en rénovation Seine-et-Marne" loading="lazy" decoding="async">
-          <div class="local-badge">
+          <div class="local-v2-radius">
+            <span class="local-v2-radius-num">30</span>
+            <span class="local-v2-radius-unit">KM</span>
+            <span class="local-v2-radius-label">de rayon</span>
+          </div>
+          <div class="local-v2-pin">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Bois-le-Roi · Seine-et-Marne</span>
+            <span>Bois-le-Roi · 77590</span>
           </div>
         </div>
-        <div class="local-text">
+
+        <!-- Right: heading + cities chip grid -->
+        <div class="local-v2-text">
           <p class="section-label">004 / Zone d'intervention</p>
           <h2 class="section-heading">Couvreur <em>Bois-le-Roi</em> et tout le Seine-et-Marne</h2>
-          <p class="section-body">Votre couvreur Bois le roi intervient dans un rayon de 30 km autour de la commune. Que vous soyez à Fontainebleau, Avon, Melun, Chartrettes, Vulaines-sur-Seine, Samois-sur-Seine, Champagne-sur-Seine, Hericy ou Barbizon — nous nous déplaçons gratuitement pour établir votre devis.</p>
-          <p class="section-body">Artisan couvreur Bois le roi depuis plus de 15 ans, nous connaissons les particularités des toitures du Seine-et-Marne : tuiles mécaniques anciennes, couvertures en ardoise, problèmes d'étanchéité liés au climat francilien.</p>
+          <p class="local-v2-lead">Plus de 15 ans d'expérience sur les toitures du 77 — tuiles mécaniques, ardoises, zinc. Déplacement <strong>gratuit</strong> dans tout notre rayon d'intervention.</p>
+
+          <div class="local-v2-cities" aria-label="Villes desservies autour de Bois-le-Roi">
+            <a href="contact.html" class="local-v2-chip is-home">
+              <span class="local-v2-chip-name">Bois-le-Roi</span>
+              <span class="local-v2-chip-meta">77590 · Siège</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Fontainebleau</span>
+              <span class="local-v2-chip-meta">7 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Avon</span>
+              <span class="local-v2-chip-meta">5 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Melun</span>
+              <span class="local-v2-chip-meta">12 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Chartrettes</span>
+              <span class="local-v2-chip-meta">5 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Samois-sur-Seine</span>
+              <span class="local-v2-chip-meta">4 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Vulaines-sur-Seine</span>
+              <span class="local-v2-chip-meta">8 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Champagne-sur-Seine</span>
+              <span class="local-v2-chip-meta">10 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Héricy</span>
+              <span class="local-v2-chip-meta">6 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip">
+              <span class="local-v2-chip-name">Barbizon</span>
+              <span class="local-v2-chip-meta">11 km</span>
+            </a>
+            <a href="contact.html" class="local-v2-chip local-v2-chip-more">
+              <span class="local-v2-chip-name">+ ma ville</span>
+              <span class="local-v2-chip-meta">Demander un devis</span>
+            </a>
+          </div>
+
+          <a href="contact.html" class="btn btn-outline section-cta local-v2-cta">
+            <span>Vérifier ma zone</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Pourquoi nous (scale-up) -->
+  <!-- Section 5b: Zoom parallax (chantiers en images) -->
+  <section class="zoom-parallax" id="zoomParallax" aria-label="Galerie zoom parallax de nos chantiers">
+    <div class="zp-intro">
+      <p class="section-label">004 bis / En images</p>
+      <h2 class="section-heading">Plongez dans <em>nos chantiers</em></h2>
+      <p class="section-body">Faites défiler — chaque photo zoome sur le détail d'un savoir-faire.</p>
+    </div>
+    <div class="zp-track" id="zpTrack">
+      <div class="zp-stage">
+        <div class="zp-slot zp-slot-0"><div class="zp-frame"><img src="images/toiture-3.png" alt="Toiture en rénovation" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-1"><div class="zp-frame"><img src="images/zinguerie-3.png" alt="Pose de zinguerie zinc" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-2"><div class="zp-frame"><img src="images/charpente-5.png" alt="Charpente bois traditionnelle" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-3"><div class="zp-frame"><img src="images/fenetre-toit-4.png" alt="Pose de fenêtre de toit Velux" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-4"><div class="zp-frame"><img src="images/isolation-5.png" alt="Isolation des combles" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-5"><div class="zp-frame"><img src="images/nettoyage-toiture-2.png" alt="Démoussage de toiture" loading="lazy" decoding="async"></div></div>
+        <div class="zp-slot zp-slot-6"><div class="zp-frame"><img src="images/drone.png" alt="Inspection drone toiture" loading="lazy" decoding="async"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Pourquoi nous — bento layout -->
   <section class="scroll-section section-why" data-animation="scale-up">
     <div class="section-inner align-center">
       <p class="section-label">005 / Nos engagements</p>
       <h2 class="section-heading">Pourquoi choisir <em>Jeanmaire</em> Couverture ?</h2>
       <p class="section-body">Un seul interlocuteur du diagnostic à la réception du chantier, zéro sous-traitance, et des engagements clairs à chaque étape.</p>
-      <div class="why-cards">
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+
+      <div class="bento-grid">
+
+        <!-- Card 1: 100% — Assurance RC Pro -->
+        <div class="bento-card bento-100">
+          <div class="bento-100-wrap">
+            <svg class="bento-100-curve" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z" fill="currentColor"/>
+            </svg>
+            <span class="bento-100-text">100<small>%</small></span>
           </div>
-          <span class="why-num">01</span>
-          <h3>Assurance RC Pro</h3>
-          <p>Travaux couverts par notre assurance responsabilité civile professionnelle. Attestation fournie sur demande.</p>
+          <h3>Assurance &amp; décennale</h3>
+          <p>RC Pro à jour, garantie décennale sur tous nos travaux. Attestations fournies sur demande.</p>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+
+        <!-- Card 2: Garantie circulaire -->
+        <div class="bento-card bento-shield">
+          <div class="bento-shield-ring">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
           </div>
-          <span class="why-num">02</span>
           <h3>Devis sous 48h</h3>
-          <p>Déplacement gratuit, diagnostic drone inclus. Chiffrage transparent et rapide.</p>
+          <p>Déplacement gratuit, diagnostic drone inclus. Chiffrage transparent et sans surprise.</p>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+        <!-- Card 3: 15 years line chart -->
+        <div class="bento-card bento-chart">
+          <div class="bento-chart-wrap">
+            <svg class="bento-chart-svg" viewBox="0 0 386 123" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="bento-chart-fill" x1="0" y1="60" x2="0" y2="123" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#046bd2" stop-opacity=".35"/>
+                  <stop offset="1" stop-color="#046bd2" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 123C3 123 14 95 35 89C56 82 66 81 66 81C66 81 81 81 92 81C103 81 101 64 109 64C117 64 117 92 125 92C132 92 142 78 154 81C165 83 187 92 194 92C201 92 206 64 214 64C222 64 239 94 244 92C250 90 259 60 266 60C272 60 284 88 287 88C295 88 300 73 305 73C312 73 323 65 336 64C348 62 348 82 364 81C368 80 373 82 376 87C379 91 381 97 383 105C383 109 383 123 383 123" fill="url(#bento-chart-fill)"/>
+              <path d="M3 121C3 121 15 94 36 88C57 82 67 81 67 81C67 81 80 81 91 81C103 81 100 64 109 64C117 64 118 92 125 92C133 92 142 79 154 81C165 83 186 92 193 92C200 92 205 64 213 64C221 64 238 94 243 92C249 90 258 61 265 61C271 61 283 88 286 88C294 88 299 73 304 73C311 73 321 66 334 64C346 63 347 82 362 81C378 79 383 107 383 107" stroke="#046bd2" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
           </div>
-          <span class="why-num">03</span>
-          <h3>Artisan couvreur Bois le roi</h3>
-          <p>Couvreur Bois le roi basé dans la commune depuis plus de 15 ans. Spécialistes des toitures du Seine-et-Marne.</p>
+          <h3>+15 ans d'expertise</h3>
+          <p>Plus de 150 toitures rénovées depuis 2010. Note Google 5,0/5 sur 51 avis vérifiés.</p>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+
+        <!-- Card 4: Drone code-style chart (col-span 3) -->
+        <div class="bento-card bento-drone">
+          <div class="bento-drone-info">
+            <div class="bento-icon-ring">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 16.5a2 2 0 002 2h14a2 2 0 002-2v-9a2 2 0 00-2-2H5a2 2 0 00-2 2z"/><path d="M12 12l3-3-3-3"/><path d="M9 9l-3 3 3 3"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Diagnostic par drone</h3>
+              <p>Inspection complète sans échafaudage. Rapport photo/vidéo HD livré sous 24h.</p>
+            </div>
           </div>
-          <span class="why-num">04</span>
-          <h3>Propreté garantie</h3>
-          <p>Nettoyage complet du chantier après chaque intervention. Propriété impeccable.</p>
+          <div class="bento-drone-chart">
+            <div class="bento-window-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <svg viewBox="0 0 366 231" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="bento-drone-fill" x1="0" y1="0" x2="0" y2="230" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#046bd2" stop-opacity=".30"/>
+                  <stop offset="1" stop-color="#046bd2" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M1 180L4 172V184L7 174L8 184L10 187V155L13 153V145L15 135V155L17 161L18 172V158L20 153L21 148V137L23 142V126L26 128V120L27 118L29 112V124L31 121V130L34 145V137L37 126L38 135L41 139V126L44 130V124L46 112L47 92L49 98V106L52 90L54 83L58 88L60 99L62 124L64 118L66 122L68 114L73 124V130L77 128L80 142V152L83 142V130L89 117V122L92 132L96 122V137L100 141V132L103 117V133L107 141L111 130L113 141V148L116 153L120 141L121 148L125 158L128 153L132 147V155L134 158L136 165L138 158L141 161L144 167L147 155L154 145L162 122V109L167 110L176 98L178 106L181 98V81L185 57L187 63L188 79L189 106L191 79L194 75V98L197 94L199 87V79L201 75L202 81L204 113L207 99L211 102V107L213 81L216 63L218 57V79L220 75L223 66V73H226V85L228 98L230 75L233 94V104L237 102L240 113L241 98L244 94L245 106L246 87L251 84L252 96L255 94L257 99L259 91L264 75L266 87L267 58L270 66L277 13L273 58L276 67L282 20L281 58V66L284 75L286 56L287 73L290 78L292 84L294 61L296 18L301 0L298 56L300 62L306 22L300 114L302 105L304 112V94L308 80L310 95L311 102L312 105L315 112L317 98L319 105L321 95L324 100L325 80L328 61L329 75L333 52L334 48L336 55L338 59V73L342 87L344 93L348 82L352 78L354 89L356 95L360 102L363 108L365 89" stroke="#046bd2" stroke-width="2" fill="none"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 180V231H365V90L362 96L360 108L356 102L354 95L352 89L348 82L344 93L342 87L338 73V59L334 48L329 75L325 80L321 95L317 98L315 112L312 105L308 80L304 112V94L301 105L300 56L298 56L300 22L296 18L292 84L290 78L284 75L281 66V58L282 20L277 13L266 87L259 91L255 94L252 96L246 87L244 94L241 98L240 113L237 102L233 94L230 75L228 98L226 73H218V57L211 102L207 99L204 113L202 81L201 75L199 87V94L194 75L191 79L189 106L188 79L185 57L181 98L178 106L176 98L162 122L154 145L141 161L132 147L125 158L116 153L100 141V132L96 137V122L83 142V152L73 124V118L60 99L52 90L47 92L41 139L29 124L23 142V145L21 148L17 161V172L8 184V231Z" fill="url(#bento-drone-fill)"/>
+            </svg>
+          </div>
         </div>
+
+        <!-- Card 5: Avatars équipe locale (col-span 3) -->
+        <div class="bento-card bento-team">
+          <div class="bento-team-info">
+            <div class="bento-icon-ring">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Artisan local Bois-le-Roi</h3>
+              <p>Équipe basée à Bois-le-Roi, intervention dans tout le 77. Zéro sous-traitance.</p>
+            </div>
+          </div>
+          <div class="bento-team-stack">
+            <div class="bento-team-row bento-team-right">
+              <span class="bento-team-tag">Émile J.</span>
+              <span class="bento-team-avatar" style="background:#046bd2">EJ</span>
+            </div>
+            <div class="bento-team-row bento-team-left">
+              <span class="bento-team-avatar" style="background:#FF6900">M</span>
+              <span class="bento-team-tag">M. Irung</span>
+            </div>
+            <div class="bento-team-row bento-team-right">
+              <span class="bento-team-tag">B. Ng</span>
+              <span class="bento-team-avatar" style="background:#034E96">B</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -668,43 +861,139 @@
 </div>
 <!-- END SCROLL CONTAINER -->
 
-<!-- FAQ -->
-<section class="section-faq" aria-label="Foire aux questions">
-  <div class="section-inner">
-    <div class="faq-grid">
-      <div class="faq-text">
-        <p class="faq-label">— QUESTIONS</p>
-        <h2 class="faq-heading">Vous avez sans doute <em>quelques questions</em>.</h2>
-        <p class="faq-intro">Si vous ne trouvez pas votre réponse ici, écrivez-nous — on répond toujours sous 24h.</p>
-        <a href="contact.html" class="btn btn-outline faq-cta"><span>Nous écrire</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary><span>Quelle est votre zone d'intervention ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">En tant que couvreur Bois le roi, nous intervenons dans la commune et dans un rayon de 30 km, couvrant tout le Seine-et-Marne : Fontainebleau, Avon, Melun, Chartrettes, Vulaines-sur-Seine, Samois-sur-Seine, Champagne-sur-Seine, Hericy, Barbizon et alentours.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Le devis est-il vraiment gratuit ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">Oui, 100 % gratuit et sans engagement. Nous nous déplaçons chez vous, réalisons un diagnostic (souvent par drone), et vous remettons un chiffrage détaillé sous 48 heures.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Quelle garantie sur les travaux ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">Tous nos travaux de couverture et zinguerie sont couverts par une garantie décennale. Nous sommes également assurés en responsabilité civile professionnelle. Attestations fournies sur simple demande.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Intervenez-vous en urgence (fuite, tempête) ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">Oui, nous proposons un service d'urgence pour bâchage, mise hors d'eau et réparations suite à sinistre. Contactez-nous au 06 50 71 51 23 — nous intervenons dans les plus brefs délais.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Utilisez-vous un drone pour le diagnostic ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">Oui, c'est systématique pour tout diagnostic préalable. Le drone nous permet d'inspecter la toiture sans échafaudage, de détecter fissures, infiltrations et zones fragiles, et de vous remettre un rapport photo/vidéo HD sous 24h.</div>
-        </details>
-        <details class="faq-item">
-          <summary><span>Quels types de toitures prenez-vous en charge ?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
-          <div class="faq-answer">Tuiles mécaniques, plates et canal, ardoises naturelles ou synthétiques, zinc joint debout, bac acier, toitures plates avec membranes EPDM ou bitume. Nous maîtrisons l'ensemble des techniques de couverture.</div>
-        </details>
-      </div>
+<!-- FAQ — tabs par domaine métier -->
+<section class="section-faq faq-tabs-section" aria-label="Foire aux questions">
+  <div class="faq-tabs-inner">
+
+    <div class="faq-tabs-head">
+      <span class="faq-tabs-eyebrow">FAQ</span>
+      <h2 class="faq-tabs-title">Vous avez sans doute <em>quelques questions</em>.</h2>
+      <p class="faq-tabs-sub">Sélectionnez un domaine pour voir les questions associées.</p>
     </div>
+
+    <!-- Tabs -->
+    <div class="faq-tabs-nav" role="tablist" aria-label="Catégories FAQ">
+      <button type="button" class="faq-tab is-active" role="tab" aria-selected="true" data-tab="couverture">
+        <span class="faq-tab-bg"></span>
+        <span class="faq-tab-label">Couverture</span>
+      </button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-tab="zinguerie">
+        <span class="faq-tab-bg"></span>
+        <span class="faq-tab-label">Zinguerie</span>
+      </button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-tab="charpente">
+        <span class="faq-tab-bg"></span>
+        <span class="faq-tab-label">Charpente</span>
+      </button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-tab="isolation">
+        <span class="faq-tab-bg"></span>
+        <span class="faq-tab-label">Isolation</span>
+      </button>
+    </div>
+
+    <!-- Panels -->
+    <div class="faq-tabs-panels">
+
+      <!-- COUVERTURE -->
+      <div class="faq-panel is-active" data-panel="couverture" role="tabpanel">
+        <details class="faq-tab-item">
+          <summary><span>Quels types de toitures prenez-vous en charge ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Tuiles mécaniques, plates et canal, ardoises naturelles ou synthétiques, zinc joint debout, bac acier, et toitures plates avec membranes EPDM ou bitume. Nous maîtrisons toutes les techniques de couverture, traditionnelles comme contemporaines.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Combien de temps dure une rénovation complète de toiture ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Pour une maison individuelle de 100 à 150 m² de toiture, comptez 5 à 10 jours ouvrés selon la complexité (dépose de l'ancienne couverture, traitement de la charpente si besoin, pose de la nouvelle couverture et zinguerie). Nous vous communiquons un planning précis dès le devis signé.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Quand faut-il refaire entièrement sa toiture ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Une toiture en tuiles dure 50 à 80 ans, l'ardoise jusqu'à 100 ans, le zinc 60 à 80 ans. Signes d'alerte : tuiles cassées ou déplacées, infiltrations dans les combles, mousse importante, affaissement visible. Mieux vaut un diagnostic préventif qu'une rénovation d'urgence.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Tuiles, ardoises ou bac acier : que choisir ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Tuiles : excellent rapport qualité/prix, esthétique régionale, bonne longévité. Ardoise : haut de gamme, durable mais plus coûteuse. Bac acier : économique, rapide à poser, idéal pour bâtiments contemporains ou agricoles. Nous vous conseillons selon le PLU local, votre budget et l'esthétique de la maison.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Le devis et le diagnostic sont-ils gratuits ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Oui — 100% gratuit et sans engagement. Déplacement, diagnostic par drone et chiffrage détaillé inclus. Vous recevez le devis sous 48 heures.</div>
+        </details>
+      </div>
+
+      <!-- ZINGUERIE -->
+      <div class="faq-panel" data-panel="zinguerie" role="tabpanel">
+        <details class="faq-tab-item">
+          <summary><span>Pourquoi installer du zinc plutôt que du PVC ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Le zinc dure 60 à 80 ans contre 15 à 25 ans pour le PVC. Il résiste aux UV, ne se déforme pas avec la chaleur, et offre une finition métallique noble. C'est aussi 100% recyclable. L'investissement initial est plus élevé mais l'amortissement est imbattable.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>À quelle fréquence entretenir ses gouttières ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Deux nettoyages par an minimum : un à l'automne après la chute des feuilles (octobre-novembre), un au printemps (mars-avril). En zone très boisée, passez à 3 ou 4 nettoyages annuels. Nous proposons des contrats d'entretien à l'année.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Réparation ponctuelle ou remplacement complet ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Si la corrosion ou les fuites sont localisées sur moins de 30% du linéaire et que le reste est sain, on répare. Au-delà, le remplacement complet devient plus économique sur le long terme. Notre diagnostic vous oriente sans pression commerciale.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Faites-vous les noues, rives et descentes en zinc sur mesure ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Oui, nous façonnons en atelier ou sur chantier toutes les pièces de zinguerie : noues, rives, faîtages, solins, descentes, dauphins fonte. Travail à la plieuse manuelle pour des finitions traditionnelles parfaites.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Intervenez-vous en urgence pour une gouttière cassée ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Oui — service d'urgence sur Bois-le-Roi et alentours pour bâchage, mise hors d'eau et réparation provisoire. Appelez le 06 50 71 51 23, nous intervenons dans les meilleurs délais.</div>
+        </details>
+      </div>
+
+      <!-- CHARPENTE -->
+      <div class="faq-panel" data-panel="charpente" role="tabpanel">
+        <details class="faq-tab-item">
+          <summary><span>Comment savoir si ma charpente est attaquée ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Signes visibles : petits trous de 1-3 mm dans le bois (capricornes), sciure fine (vrillettes), galeries en surface, bois qui sonne creux, déformation des pannes ou chevrons. Une inspection visuelle annuelle des combles permet de détecter l'attaque tôt.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Traitement préventif ou curatif : quelle différence ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Le préventif s'applique sur du bois sain pour empêcher l'arrivée d'insectes ou champignons (recommandé tous les 10 ans). Le curatif est plus invasif : sondage, bûchage des zones attaquées, injection sous pression et pulvérisation. Nous garantissons les deux.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Combien coûte un traitement de charpente ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Traitement préventif : entre 15 et 25 €/m² de surface au sol. Traitement curatif : 30 à 60 €/m² selon l'ampleur de l'infestation. Le diagnostic gratuit vous donne le prix exact pour votre cas.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Quelle garantie sur le traitement de charpente ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">10 ans de garantie sur tous nos traitements (préventif comme curatif), produits certifiés CTB-P+. Décennale du gros œuvre + assurance responsabilité civile professionnelle. Attestations remises à la fin du chantier.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Devez-vous démonter la couverture pour traiter ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Non, le traitement se fait depuis l'intérieur des combles. Aucune dépose de tuiles ou ardoises nécessaire. Vous pouvez occuper la maison pendant les travaux, juste éviter les combles 24h après l'application.</div>
+        </details>
+      </div>
+
+      <!-- ISOLATION -->
+      <div class="faq-panel" data-panel="isolation" role="tabpanel">
+        <details class="faq-tab-item">
+          <summary><span>Quel matériau d'isolation choisir pour les combles ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Laine de verre : excellent rapport qualité/prix, performances thermiques solides. Laine de roche : meilleur déphasage en été, anti-feu. Ouate de cellulose : écologique, soufflée pour combles perdus. Polyuréthane projeté : top performance mais plus cher. Nous vous orientons selon le budget et la configuration des combles.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Quelles aides financières pour l'isolation en 2026 ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">MaPrimeRénov' (selon revenus), Certificats d'Économie d'Énergie (CEE), TVA réduite à 5,5%, éco-PTZ jusqu'à 50 000 €. Nous sommes RGE (Reconnu Garant de l'Environnement) — condition obligatoire pour bénéficier des aides. On vous accompagne dans les démarches.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Quelle épaisseur d'isolant pour respecter la RE2020 ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Pour atteindre R = 7 m².K/W (résistance thermique requise pour les combles en RE2020) : 30 cm de laine de verre, 28 cm de laine de roche, ou 25 cm de polyuréthane. En rénovation, l'objectif est plus souple (R ≥ 6) mais on vise toujours le maximum possible.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Isolation par l'intérieur ou par l'extérieur (sarking) ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">ITI (intérieur) : moins coûteuse, mais réduit le volume habitable et crée des ponts thermiques. ITE/sarking (extérieur, sous toiture) : suppression des ponts thermiques, conservation du volume, mais plus chère et nécessite la dépose de la couverture. Le sarking est idéal lors d'une réfection de toiture.</div>
+        </details>
+        <details class="faq-tab-item">
+          <summary><span>Combien d'économies d'énergie après isolation des combles ?</span><span class="faq-tab-plus" aria-hidden="true">+</span></summary>
+          <div class="faq-tab-answer">Une bonne isolation des combles permet de réduire la facture de chauffage de 25 à 30%. Sur une maison qui consomme 2 000 € de chauffage par an, c'est 500 à 600 € d'économies annuelles — l'investissement est amorti en 5 à 8 ans.</div>
+        </details>
+      </div>
+
+    </div>
+
+    <!-- CTA "écrivez-nous" -->
+    <p class="faq-tabs-cta">Une question qui n'apparaît pas ici ? <a href="contact.html">Écrivez-nous</a> — réponse sous 24h.</p>
   </div>
 </section>
 

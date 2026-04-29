@@ -45,6 +45,10 @@
     initCardTilt();
     initDroneFly();
     initTestiCarousel();
+
+    // Interactive widgets (don't depend on GSAP, run regardless)
+    initServicesCarousel();
+    initFaqTabs();
   }
 
   /* ---------- HERO PARALLAX ---------- */
@@ -125,6 +129,126 @@
     }
 
     animateSections();
+    initZoomParallax();
+  }
+
+  /* ---------- FAQ TABS ---------- */
+  function initFaqTabs() {
+    var tabs = document.querySelectorAll('.faq-tab');
+    var panels = document.querySelectorAll('.faq-panel');
+    if (!tabs.length || !panels.length) return;
+
+    function activate(key) {
+      tabs.forEach(function (t) {
+        var on = t.dataset.tab === key;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        var on = p.dataset.panel === key;
+        p.classList.toggle('is-active', on);
+        // Close all <details> when switching tabs (avoids leftover open state)
+        if (!on) {
+          p.querySelectorAll('details[open]').forEach(function (d) { d.open = false; });
+        }
+      });
+    }
+
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { activate(t.dataset.tab); });
+    });
+
+    // Keyboard: ArrowLeft/Right to move between tabs
+    var tabsArr = Array.prototype.slice.call(tabs);
+    tabsArr.forEach(function (t, idx) {
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          var next = idx + (e.key === 'ArrowRight' ? 1 : -1);
+          if (next < 0) next = tabsArr.length - 1;
+          if (next >= tabsArr.length) next = 0;
+          tabsArr[next].focus();
+          activate(tabsArr[next].dataset.tab);
+        }
+      });
+    });
+  }
+
+  /* ---------- SERVICES CAROUSEL ---------- */
+  function initServicesCarousel() {
+    var track = document.getElementById('svcTrack');
+    var prev = document.getElementById('svcPrev');
+    var next = document.getElementById('svcNext');
+    if (!track || !prev || !next) return;
+
+    function step() {
+      var first = track.querySelector('.svc-card');
+      if (!first) return 320;
+      var styles = getComputedStyle(track);
+      var gap = parseFloat(styles.columnGap || styles.gap || '0');
+      return first.getBoundingClientRect().width + gap;
+    }
+
+    function atEnd() {
+      return track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    }
+    function atStart() {
+      return track.scrollLeft <= 4;
+    }
+
+    next.addEventListener('click', function () {
+      if (atEnd()) {
+        // Loop back to start
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      }
+    });
+
+    prev.addEventListener('click', function () {
+      if (atStart()) {
+        // Loop to end
+        track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: -step(), behavior: 'smooth' });
+      }
+    });
+
+    // Keyboard support: ←/→ when carousel has focus
+    track.tabIndex = 0;
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); prev.click(); }
+    });
+  }
+
+  /* ---------- ZOOM PARALLAX ---------- */
+  function initZoomParallax() {
+    var track = document.getElementById('zpTrack');
+    if (!track) return;
+    var slots = track.querySelectorAll('.zp-slot');
+    if (!slots.length) return;
+    // Skip the heavy parallax on small viewports — CSS already collapses to a grid
+    if (window.matchMedia('(max-width: 720px)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Per-slot max scale (matches the React component's scale4/5/6/8/9 mapping)
+    var maxScales = [4, 5, 6, 5, 6, 8, 9];
+
+    ScrollTrigger.create({
+      trigger: track,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 0.4,
+      onUpdate: function (self) {
+        var p = self.progress; // 0 → 1
+        for (var i = 0; i < slots.length; i++) {
+          var max = maxScales[i % maxScales.length];
+          var scale = 1 + (max - 1) * p;
+          slots[i].style.transform = 'scale(' + scale.toFixed(3) + ')';
+        }
+      },
+    });
   }
 
   /* ---------- HERO ENTRANCE ---------- */
