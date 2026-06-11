@@ -2795,6 +2795,20 @@ html, body {
 .zoom-parallax .zp-intro .section-heading,
 .zoom-parallax .zp-intro .section-body {
   margin-bottom: .5rem;
+  /* Cette section n'est pas une .scroll-section : le JS ne révèle pas son intro.
+     On force donc l'affichage (sinon opacity:0 hérité de la règle globale = invisible). */
+  opacity: 1;
+  transform: none;
+}
+/* Palette claire : l'intro est sur fond clair → forcer des couleurs sombres
+   (la règle globale .section-heading/.section-body est blanche, héritée de l'ancienne palette sombre) */
+.zoom-parallax .zp-intro .section-heading {
+  color: var(--primary-dark);
+  text-shadow: none;
+}
+.zoom-parallax .zp-intro .section-body {
+  color: var(--text-muted);
+  text-shadow: none;
 }
 .zoom-parallax .zp-intro .section-heading em {
   font-style: italic;
