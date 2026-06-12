@@ -12,14 +12,14 @@
   --bg-accent: #FFFFFF;
   --ink: #060E18;
   --text-light: #060E18;
-  --muted: #49729F;
-  --accent: #B8926A;
-  --accent-light: rgba(184,146,106,.12);
-  --accent-dark: #9A754F;
+  --muted: #3C5D82;
+  --accent: #876234;
+  --accent-light: rgba(135,98,52,.12);
+  --accent-dark: #5F4524;
   --card: #FFFFFF;
   --border: #CEDDEE;
   --primary-dark: #1A2D42;
-  --secondary: #49729F;
+  --secondary: #3C5D82;
   --radius: 16px;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Poppins', sans-serif;
@@ -122,15 +122,20 @@ em {
   width: 100%;
   z-index: 1000;
   padding: 1rem 0;
+  /* Always-on light glass so nav + phone stay readable over any hero image */
+  background: rgba(249,251,253,.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(6,14,24,.05);
   transition: background .35s, backdrop-filter .35s, padding .35s, box-shadow .35s;
 }
 
 .site-header.scrolled {
-  background: rgba(249,251,253,.85);
+  background: rgba(249,251,253,.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: .65rem 0;
-  box-shadow: 0 1px 0 rgba(6,14,24,.06);
+  box-shadow: 0 1px 0 rgba(6,14,24,.06), 0 6px 22px -12px rgba(26,45,66,.25);
 }
 
 .header-inner {
@@ -392,7 +397,7 @@ em {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(232,71,42,.25);
+  box-shadow: 0 6px 20px rgba(135,98,52,.25);
 }
 
 .btn-outline {
@@ -611,8 +616,8 @@ em {
 }
 
 .service-card:hover {
-  border-color: rgba(232,71,42,.25);
-  box-shadow: 0 8px 32px rgba(232,71,42,.06);
+  border-color: rgba(135,98,52,.25);
+  box-shadow: 0 8px 32px rgba(135,98,52,.06);
   transform: translateY(-2px);
 }
 
@@ -754,7 +759,7 @@ em {
 
 .blog-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(232,71,42,.08);
+  box-shadow: 0 8px 24px rgba(135,98,52,.08);
 }
 
 .blog-card-img {
@@ -1789,9 +1794,9 @@ em {
   transition: background .25s var(--ease), border-color .25s var(--ease);
 }
 .contact-card .cc-info-item:hover .cc-info-icon {
-  background: rgba(255,105,0,.12);
-  border-color: rgba(255,105,0,.4);
-  color: #FF6900;
+  background: rgba(135,98,52,.12);
+  border-color: rgba(135,98,52,.4);
+  color: #876234;
 }
 .contact-card .cc-info-text { min-width: 0; }
 .contact-card .cc-info-label {

@@ -11,13 +11,13 @@
   --bg-accent: #FFFFFF;        /* Cards */
   --text-light: #060E18;       /* Body text */
   --text-dark: #060E18;
-  --text-muted: #49729F;       /* Secondary blue */
-  --accent: #B8926A;           /* Doré — CTAs */
-  --accent-light: #C9A47F;
-  --accent-dark: #9A754F;
-  --copper: #B8926A;
+  --text-muted: #3C5D82;       /* Secondary blue — darkened for AA contrast (~6.8:1) */
+  --accent: #876234;           /* Doré foncé — CTAs/texte, AA (~5.4:1 sur blanc) */
+  --accent-light: #A07A40;
+  --accent-dark: #5F4524;
+  --copper: #876234;
   --primary-dark: #1A2D42;     /* Bleu minuit — titles */
-  --secondary: #49729F;
+  --secondary: #3C5D82;
   --border: #CEDDEE;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Poppins', sans-serif;
@@ -155,7 +155,12 @@ em {
   width: 100%;
   height: var(--header-h);
   z-index: 1000;
-  transition: background 0.4s, backdrop-filter 0.4s;
+  /* Always-on light glass bar so the header is visible at the top too (not transparent) */
+  background: rgba(249,251,253,0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(206,221,238,0.6);
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
 }
 
 .site-header.scrolled {
@@ -241,7 +246,8 @@ em {
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   background: var(--bg-accent);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px -12px rgba(26,45,66,0.28);
   border-radius: 12px;
   padding: 0.75rem 0;
   min-width: 220px;
@@ -2995,10 +3001,10 @@ html, body {
 /* Per-card gradients — bleu / orange / mix variants */
 .svc-card-1 { background: linear-gradient(135deg, rgba(184,146,106,.28), rgba(184,146,106,.08) 70%, rgba(249,251,253,.92)); }
 .svc-card-2 { background: linear-gradient(135deg, rgba(3,78,150,.32), rgba(3,78,150,.08) 70%, rgba(249,251,253,.92)); }
-.svc-card-3 { background: linear-gradient(135deg, rgba(255,105,0,.24), rgba(255,105,0,.06) 70%, rgba(249,251,253,.92)); }
+.svc-card-3 { background: linear-gradient(135deg, rgba(135,98,52,.24), rgba(135,98,52,.06) 70%, rgba(249,251,253,.92)); }
 .svc-card-4 { background: linear-gradient(135deg, rgba(14,123,217,.28), rgba(14,123,217,.08) 70%, rgba(249,251,253,.92)); }
-.svc-card-5 { background: linear-gradient(135deg, rgba(184,146,106,.18), rgba(255,105,0,.14) 70%, rgba(249,251,253,.92)); }
-.svc-card-6 { background: linear-gradient(135deg, rgba(3,78,150,.22), rgba(255,105,0,.10) 70%, rgba(249,251,253,.92)); }
+.svc-card-5 { background: linear-gradient(135deg, rgba(184,146,106,.18), rgba(135,98,52,.14) 70%, rgba(249,251,253,.92)); }
+.svc-card-6 { background: linear-gradient(135deg, rgba(3,78,150,.22), rgba(135,98,52,.10) 70%, rgba(249,251,253,.92)); }
 
 .svc-card-top,
 .svc-card-bot {
@@ -3063,7 +3069,7 @@ html, body {
 }
 .svc-card:hover .svc-link {
   gap: .65rem;
-  color: #FF6900;
+  color: #876234;
 }
 
 /* Nav buttons */
@@ -3765,8 +3771,8 @@ html, body {
   border-bottom: 1px solid rgba(184,146,106,.4);
 }
 .faq-tabs-cta a:hover {
-  color: #FF6900;
-  border-bottom-color: rgba(255,105,0,.5);
+  color: #876234;
+  border-bottom-color: rgba(135,98,52,.5);
 }
 
 @media (max-width: 600px) {
@@ -3940,16 +3946,16 @@ html, body {
 .local-v2-chip.is-home .local-v2-chip-meta { color: rgba(184,146,106,.7); }
 
 .local-v2-chip-more {
-  background: linear-gradient(135deg, rgba(255,105,0,.15), rgba(255,105,0,.04));
-  border-color: rgba(255,105,0,.4);
+  background: linear-gradient(135deg, rgba(135,98,52,.15), rgba(135,98,52,.04));
+  border-color: rgba(135,98,52,.4);
   border-style: dashed;
 }
-.local-v2-chip-more .local-v2-chip-name { color: #FF6900; }
+.local-v2-chip-more .local-v2-chip-name { color: #876234; }
 .local-v2-chip-more:hover {
-  background: rgba(255,105,0,.18);
-  border-color: rgba(255,105,0,.6);
+  background: rgba(135,98,52,.18);
+  border-color: rgba(135,98,52,.6);
 }
-.local-v2-chip-more:hover .local-v2-chip-meta { color: #FF6900; }
+.local-v2-chip-more:hover .local-v2-chip-meta { color: #876234; }
 
 .local-v2-cta {
   align-self: flex-start;
@@ -4443,3 +4449,49 @@ body, p, span, li, a { color: var(--primary-dark); }
   color: var(--primary-dark) !important;
   text-shadow: none !important;
 }
+
+/* =================================================
+   HERO PARALLAX CTA BUTTONS — make both stand out over the
+   busy roof-tile image (strong shadow + readable text).
+   ================================================= */
+
+/* FIX: button label spans were being forced navy by the global
+   `body span { color: var(--primary-dark) }` rule (a direct match
+   beats inherited button color). Make spans follow the button color. */
+.btn span { color: inherit !important; }
+
+/* Primary CTA — solid gold, white label, strong lift off the image */
+.hero.hero-parallax .hero-cta .btn-primary {
+  background: var(--accent) !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255,255,255,0.30) !important;
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,0.62), 0 4px 14px rgba(0,0,0,0.38) !important;
+}
+.hero.hero-parallax .hero-cta .btn-primary:hover {
+  background: var(--accent-dark) !important;
+  box-shadow: 0 22px 48px -12px rgba(0,0,0,0.7), 0 6px 16px rgba(0,0,0,0.45) !important;
+  transform: translateY(-2px);
+}
+.hero.hero-parallax .hero-cta .btn-primary,
+.hero.hero-parallax .hero-cta .btn-primary span,
+.hero.hero-parallax .hero-cta .btn-primary svg { color: #FFFFFF !important; stroke: #FFFFFF !important; }
+
+/* Secondary CTA (phone) — dark glass so the white label + border
+   pop against the bright tiles. The global `.btn-outline` patch
+   uses !important, so we override with higher specificity. */
+.hero.hero-parallax .hero-cta .btn-outline {
+  background: rgba(13,20,33,0.45) !important;
+  border: 1.5px solid rgba(255,255,255,0.75) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,0.62) !important;
+}
+.hero.hero-parallax .hero-cta .btn-outline:hover {
+  background: rgba(13,20,33,0.62) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+.hero.hero-parallax .hero-cta .btn-outline span,
+.hero.hero-parallax .hero-cta .btn-outline svg { color: #FFFFFF !important; stroke: #FFFFFF !important; }
