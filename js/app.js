@@ -600,7 +600,7 @@
           throw new Error(result.message || 'Erreur');
         }
       } catch (err) {
-        alert("Désolé, l'envoi a échoué. Contactez-nous directement au 06 50 71 51 23.");
+        alert("Désolé, l'envoi a échoué. Contactez-nous directement au 09 39 24 79 51.");
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
