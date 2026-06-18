@@ -1000,5 +1000,35 @@
 <script src="js/app.js"></script>
 <script src="cookies.js"></script>
 <script src="js/particles.js"></script>
+<!-- HelpAI - suivi des leads (envoi vers le dashboard, en plus de Web3Forms) -->
+<script>
+(function(){
+  var LEAD_URL='https://wodlupbffooqtshgasml.supabase.co/functions/v1/agency-lead-intake';
+  var SLUG='daniel-jeanmaire-bois-le-roi';
+  var SECRET='b9766593-536c-4cd8-9893-b9dfd36b8cae';
+  function val(form,n){var el=form.querySelector('[name="'+n+'"]');return el&&el.value?el.value.trim():'';}
+  function track(form){
+    try{
+      var nom=val(form,'nom')||val(form,'name');
+      var tel=val(form,'tel')||val(form,'phone');
+      var email=val(form,'email');
+      var message=val(form,'message');
+      var ville=val(form,'ville');
+      var service=val(form,'service');
+      if(!nom&&!tel&&!email)return;
+      var meta={};
+      if(ville)meta.ville=ville;
+      if(service)meta.service=service;
+      fetch(LEAD_URL,{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({client_slug:SLUG,webhook_secret:SECRET,source:'site',nom:nom,telephone:tel,email:email,message:message,metadata:meta})
+      }).catch(function(){});
+    }catch(e){}
+  }
+  document.querySelectorAll('form[action*="web3forms"]').forEach(function(form){
+    form.addEventListener('submit',function(){track(form);},true);
+  });
+})();
+</script>
+
 </body>
 </html>
