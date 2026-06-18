@@ -1,24 +1,20 @@
 {
-  "name": "Jeanmaire Couverture - Couvreur Bois le roi",
-  "short_name": "Jeanmaire Couverture",
-  "description": "Couvreur Bois le roi depuis plus de 15 ans. Toiture, zinguerie, charpente et isolation dans tout le Seine-et-Marne.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0D0D14",
-  "theme_color": "#046bd2",
-  "lang": "fr-FR",
+  "name": "Jeanmaire Couverture",
+  "short_name": "Jeanmaire",
   "icons": [
     {
-      "src": "images/logo-jeanmaire.png",
+      "src": "favicon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
-      "src": "images/logo-jeanmaire.png",
+      "src": "favicon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#046bd2",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
 }
