@@ -87,20 +87,11 @@ em {
 
 /* =================== LOADER =================== */
 #loader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--bg-darker);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s var(--ease), visibility 0.6s;
+  display: none;
 }
 
 #loader.done {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .loader-inner {
