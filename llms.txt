@@ -1,31 +1,37 @@
 # Jeanmaire Couverture — Couvreur Bois-le-Roi (77)
 
-Jeanmaire Couverture est une entreprise artisanale de couverture et zinguerie basée à Bois-le-Roi (Seine-et-Marne, 77590), intervenant dans un rayon de 30 km.
+> Entreprise artisanale de couverture et zinguerie basée à Bois-le-Roi (Seine-et-Marne, 77590), intervenant dans un rayon de 30 km. Plus de 15 ans d'expérience. Devis gratuit, inspection par drone, garantie décennale.
 
-## Services
+## Pages principales
 
-- Couverture : pose et rénovation de toitures en tuiles, ardoises, zinc et bac acier
-- Zinguerie : fabrication et pose de gouttières, noues, chéneaux et descentes
-- Charpente : inspection, traitement préventif et curatif contre insectes xylophages
-- Fenêtres de toit : pose de fenêtres de toit type Velux
-- Isolation : isolation des combles, étanchéité EPDM et bitume
-- Nettoyage : démoussage, nettoyage haute pression et hydrofugation
-- Inspection drone : diagnostic toiture par drone sans échafaudage
+- [Accueil](https://toiture-jeanmaire.fr/) : présentation de l'entreprise et de tous les services
+- [Couverture](https://toiture-jeanmaire.fr/couverture) : pose et rénovation de toitures (tuiles, ardoises, zinc, bac acier)
+- [Zinguerie](https://toiture-jeanmaire.fr/zinguerie) : gouttières, noues, chéneaux et descentes
+- [Traitement de charpente](https://toiture-jeanmaire.fr/charpente) : traitement préventif et curatif des bois
+- [Fenêtres de toit](https://toiture-jeanmaire.fr/fenetres-toit) : pose de fenêtres de toit type Velux
+- [Isolation & étanchéité](https://toiture-jeanmaire.fr/isolation) : isolation des combles, membranes EPDM et bitume
+- [Nettoyage de toiture](https://toiture-jeanmaire.fr/nettoyage) : démoussage, nettoyage haute pression, hydrofugation
+- [Réalisations](https://toiture-jeanmaire.fr/realisations) : galerie de chantiers réalisés
+- [Blog](https://toiture-jeanmaire.fr/content/blog/) : conseils et guides toiture
+- [Contact](https://toiture-jeanmaire.fr/contact) : demande de devis et coordonnées
 
-## Informations légales
+## Pages locales (SEO)
 
-- Forme juridique : Entreprise Individuelle (E.I.)
-- Siège social : Sartrouville (78)
-- Local d'exploitation : Bois-le-Roi (77590)
+- [Refaire sa toiture à Bois-le-Roi](https://toiture-jeanmaire.fr/refaire-toiture-bois-le-roi)
+- [Entretien de gouttières à Bois-le-Roi](https://toiture-jeanmaire.fr/entretien-gouttieres-bois-le-roi)
+- [Isolation des combles à Bois-le-Roi](https://toiture-jeanmaire.fr/isolation-combles-bois-le-roi)
+- [Inspection de toiture par drone à Bois-le-Roi](https://toiture-jeanmaire.fr/inspection-drone-toiture-bois-le-roi)
+
+## Informations
+
 - Téléphone : 09 39 24 79 51
-- Garantie décennale : oui
-- Assurance RC Pro : oui
+- Forme juridique : Entreprise Individuelle (E.I.)
+- Siège social : Sartrouville (78) — Local d'exploitation : Bois-le-Roi (77590)
+- Garantie décennale et assurance RC Pro
+- Zone d'intervention : Bois-le-Roi, Fontainebleau, Avon, Melun, Chartrettes, Vulaines-sur-Seine, Samois-sur-Seine, Champagne-sur-Seine, Héricy, Barbizon et tout le Seine-et-Marne (77)
 
-## Zone d'intervention
+## Ressources
 
-Bois-le-Roi, Fontainebleau, Avon, Melun, Chartrettes, Vulaines-sur-Seine, Samois-sur-Seine, Champagne-sur-Seine, Hericy, Barbizon et tout le Seine-et-Marne (77).
-
-## Site web
-
-- URL : https://toiture-jeanmaire.fr
-- Sitemap : https://toiture-jeanmaire.fr/sitemap.xml
+- [Plan du site (sitemap)](https://toiture-jeanmaire.fr/sitemap.xml)
+- [Mentions légales](https://toiture-jeanmaire.fr/mentions-legales)
+- [Conditions générales](https://toiture-jeanmaire.fr/conditions-generales)
