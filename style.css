@@ -2633,6 +2633,10 @@ html, body {
   margin: 0 0 1.5rem;
   text-transform: uppercase;
   text-shadow: 0 4px 28px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.4);
+  /* LCP : visible immédiatement, pas de fade-in bloquant */
+  opacity: 1;
+  animation: none;
+  transform: none;
 }
 .hero.hero-parallax .hero-title .word {
   display: block;
