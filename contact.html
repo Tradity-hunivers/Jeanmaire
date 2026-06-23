@@ -362,7 +362,29 @@ if(typeof gsap!=='undefined'){
     }catch(e){}
   }
   document.querySelectorAll('form[action*="web3forms"]').forEach(function(form){
-    form.addEventListener('submit',function(){track(form);},true);
+    var successEl=document.getElementById('contactSuccess');
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){form.reportValidity();return;}
+      track(form);
+      var btn=form.querySelector('button[type="submit"]');
+      var orig=btn?btn.innerHTML:'';
+      if(btn){btn.disabled=true;btn.innerHTML='Envoi en cours…';}
+      try{
+        var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        var data=await res.json();
+        if(data.success){
+          Array.from(form.children).forEach(function(child){
+            if(child!==successEl && !child.matches('input[type="hidden"], input[name="botcheck"]')) child.style.display='none';
+          });
+          if(successEl){successEl.style.display='block';successEl.scrollIntoView({behavior:'smooth',block:'center'});}
+          form.reset();
+        }else{throw new Error(data.message||'Erreur');}
+      }catch(err){
+        if(btn){btn.disabled=false;btn.innerHTML=orig;}
+        alert("Désolé, l'envoi a échoué. Appelez-nous au 09 39 24 79 51 ou écrivez à Jeanmairecouverture@gmail.com.");
+      }
+    });
   });
 })();
 </script>
