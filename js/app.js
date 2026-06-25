@@ -29,9 +29,14 @@
       setTimeout(function () { loader.style.display = 'none'; }, 500);
     }
 
-    // Smooth scroll + section animations
-    initLenis();
-    initGSAP();
+    // Smooth scroll + animations de sections — differe apres le 1er rendu
+    // pour liberer le fil principal (le LCP devient detectable sur mobile bride).
+    var initAnims = function () { initLenis(); initGSAP(); };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initAnims, { timeout: 800 });
+    } else {
+      setTimeout(initAnims, 150);
+    }
 
     // Parallax background for hero
     initHeroParallax();
@@ -88,7 +93,8 @@
   /* ---------- LENIS ---------- */
   let lenis;
   function initLenis() {
-    if (typeof Lenis === 'undefined') return;
+    // Mobile : on garde le scroll natif (pas de rAF perpetuel Lenis -> meilleur LCP/perf)
+    if (IS_MOBILE || typeof Lenis === 'undefined') return;
     lenis = new Lenis({
       duration: 1.2,
       easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
