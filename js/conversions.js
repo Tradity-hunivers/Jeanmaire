@@ -51,6 +51,7 @@
       '.mobile-cta-bar{display:none}' +
       '@media(max-width:768px){' +
         'body{padding-bottom:56px}' +
+        '.to-top{bottom:72px!important}' +
         'body.menu-open .mobile-cta-bar{display:none}' +
         '.mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:998;box-shadow:0 -2px 16px rgba(6,14,24,.25)}' +
         '.mobile-cta-bar a{flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:8px;font-family:var(--font-display,sans-serif);font-weight:700;font-size:1.05rem;line-height:1.15;text-decoration:none;color:#fff}' +
