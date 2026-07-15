@@ -11,12 +11,12 @@
   // 8 photos picked from /images covering each Jeanmaire service
   const IMAGES = [
     { src: 'images/toiture-2.png',          alt: 'Rénovation de toiture',    tag: 'Couverture',     rotation: -15 },
-    { src: 'images/zinguerie-2.png',        alt: 'Pose de zinguerie zinc',   tag: 'Zinguerie',      rotation: -8  },
-    { src: 'images/charpente-3.png',        alt: 'Charpente traditionnelle', tag: 'Charpente',      rotation: 5   },
-    { src: 'images/fenetre-toit-2.png',     alt: 'Pose de fenêtre de toit',  tag: 'Velux',          rotation: 12  },
-    { src: 'images/isolation-3.png',        alt: 'Isolation des combles',    tag: 'Isolation',      rotation: -12 },
-    { src: 'images/nettoyage-toiture-1.png',alt: 'Démoussage de toiture',    tag: 'Nettoyage',      rotation: 8   },
-    { src: 'images/toiture-5.png',          alt: 'Toiture neuve en chantier',tag: 'Pose toiture',   rotation: -5  },
+    { src: 'images/zinguerie-2.jpg',        alt: 'Pose de zinguerie zinc',   tag: 'Zinguerie',      rotation: -8  },
+    { src: 'images/charpente-3.jpg',        alt: 'Charpente traditionnelle', tag: 'Charpente',      rotation: 5   },
+    { src: 'images/fenetre-toit-2.jpg',     alt: 'Pose de fenêtre de toit',  tag: 'Velux',          rotation: 12  },
+    { src: 'images/isolation-3.jpg',        alt: 'Isolation des combles',    tag: 'Isolation',      rotation: -12 },
+    { src: 'images/nettoyage-toiture-1.jpg',alt: 'Démoussage de toiture',    tag: 'Nettoyage',      rotation: 8   },
+    { src: 'images/toiture-5.jpg',          alt: 'Toiture neuve en chantier',tag: 'Pose toiture',   rotation: -5  },
     { src: 'images/drone.png',              alt: 'Inspection drone',         tag: 'Inspection',     rotation: 10  }
   ];
 

@@ -494,7 +494,6 @@ em {
   height: 7px;
   border-radius: 50%;
   background: #046bd2;
-  animation: heroPulse 2s ease-in-out infinite;
 }
 @keyframes heroPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -680,7 +679,6 @@ em {
   width: 1px;
   height: 40px;
   background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
@@ -2563,8 +2561,7 @@ html, body {
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  will-change: transform;
-  transform: translate3d(0,0,0) scale(1.05);
+  transform: scale(1.05);
   filter: contrast(1.05) brightness(0.92);
 }
 .hero-bg-overlay {

@@ -337,6 +337,90 @@
   .carousel-card { width: 110px; height: 145px; border-radius: 16px; }
   .carousel-card .card-tag { font-size: 0.58rem; padding: 5px 8px; }
 }
+
+/* =================== REALISATIONS GALLERY =================== */
+.works {
+  position: relative;
+  padding: 5rem 1rem 6rem;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(4,107,210,.07), transparent 60%),
+    var(--bg);
+}
+.works-inner { max-width: 1200px; margin: 0 auto; }
+.works-head { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+.works-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(4,107,210,0.10); border: 1px solid rgba(4,107,210,0.3);
+  color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem;
+}
+.works-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1;
+  letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem;
+}
+.works-sub { font-size: 1.02rem; line-height: 1.6; color: rgba(232,228,223,0.72); }
+
+.works-filters {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+  margin: 0 auto 2.5rem;
+}
+.works-filter {
+  padding: 8px 18px; border-radius: 999px;
+  background: rgba(22,22,22,0.55); border: 1px solid rgba(232,228,223,0.12);
+  color: rgba(232,228,223,0.78); font-family: var(--font-display);
+  font-size: 0.9rem; font-weight: 500; cursor: pointer;
+  transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
+}
+.works-filter:hover { border-color: rgba(4,107,210,0.5); color: var(--ink); }
+.works-filter.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.works-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 560px) { .works-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .works-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.work-card {
+  border-radius: 18px; overflow: hidden;
+  background: rgba(22,22,22,0.55); border: 1px solid rgba(232,228,223,0.08);
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(4,107,210,0.45);
+  box-shadow: 0 24px 50px -20px rgba(4,107,210,0.5);
+}
+.work-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.work-media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .6s var(--ease);
+}
+.work-card:hover .work-media img { transform: scale(1.08); }
+.work-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(13,13,20,0.78);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--ink); font-family: var(--font-mono);
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 5px 10px; border-radius: 8px; border: 1px solid rgba(232,228,223,0.12);
+}
+.work-body { padding: 1.25rem 1.25rem 1.5rem; }
+.work-body h3 {
+  font-family: var(--font-display); font-size: 1.12rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 0.35rem;
+}
+.work-loc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+.work-desc { font-size: 0.92rem; line-height: 1.55; color: rgba(232,228,223,0.7); }
+
+.works-cta { text-align: center; margin-top: 3.5rem; }
+.works-cta p {
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 1.25rem;
+}
 </style>
 </head>
 <body>
@@ -448,6 +532,183 @@
   </div>
 </section>
 
+<!-- REALISATIONS GALLERY -->
+<section class="works" id="works">
+  <div class="works-inner">
+    <header class="works-head">
+      <span class="works-eyebrow">Nos derniers chantiers</span>
+      <h2 class="works-title">Nos réalisations en images</h2>
+      <p class="works-sub">Réfection, zinguerie, charpente, isolation, démoussage : un aperçu de nos chantiers récents à Bois-le-Roi et dans toute la Seine-et-Marne.</p>
+    </header>
+
+    <div class="works-filters" id="worksFilters">
+      <button class="works-filter is-active" data-filter="all" type="button">Tous</button>
+      <button class="works-filter" data-filter="couverture" type="button">Couverture</button>
+      <button class="works-filter" data-filter="zinguerie" type="button">Zinguerie</button>
+      <button class="works-filter" data-filter="charpente" type="button">Charpente</button>
+      <button class="works-filter" data-filter="isolation" type="button">Isolation</button>
+      <button class="works-filter" data-filter="fenetre" type="button">Fenêtres de toit</button>
+      <button class="works-filter" data-filter="nettoyage" type="button">Nettoyage</button>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+
+      <article class="work-card" data-cat="couverture">
+        <div class="work-media">
+          <img src="images/toiture-1.jpg" alt="Réfection complète de toiture en tuiles à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Couverture</span>
+        </div>
+        <div class="work-body">
+          <h3>Réfection complète de toiture</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Dépose de l'ancienne couverture, pose de tuiles neuves, écran sous-toiture et faîtage scellé.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="couverture">
+        <div class="work-media">
+          <img src="images/toiture-3.jpg" alt="Rénovation de couverture à Fontainebleau" loading="lazy">
+          <span class="work-badge">Couverture</span>
+        </div>
+        <div class="work-body">
+          <h3>Rénovation de couverture</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Fontainebleau (77)</p>
+          <p class="work-desc">Remplacement des tuiles abîmées et reprise complète de l'étanchéité de la toiture.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="couverture">
+        <div class="work-media">
+          <img src="images/toiture-6.jpg" alt="Pose de toiture neuve à Chartrettes" loading="lazy">
+          <span class="work-badge">Couverture</span>
+        </div>
+        <div class="work-body">
+          <h3>Pose de toiture neuve</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Chartrettes (77)</p>
+          <p class="work-desc">Couverture neuve en tuiles plates traditionnelles sur une construction récente.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="zinguerie">
+        <div class="work-media">
+          <img src="images/zinguerie-1.jpg" alt="Pose de gouttières en zinc à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Zinguerie</span>
+        </div>
+        <div class="work-body">
+          <h3>Gouttières en zinc</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Fabrication et pose sur mesure de gouttières et descentes en zinc.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="zinguerie">
+        <div class="work-media">
+          <img src="images/zinguerie-4.jpg" alt="Chéneaux et noues en zinc à Avon" loading="lazy">
+          <span class="work-badge">Zinguerie</span>
+        </div>
+        <div class="work-body">
+          <h3>Chéneaux &amp; noues</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Avon (77)</p>
+          <p class="work-desc">Façonnage de chéneaux en zinc pour une évacuation des eaux optimale.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="charpente">
+        <div class="work-media">
+          <img src="images/charpente-1.jpg" alt="Charpente traditionnelle à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Charpente</span>
+        </div>
+        <div class="work-body">
+          <h3>Charpente traditionnelle</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Réparation et renforcement d'une charpente bois ancienne.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="charpente">
+        <div class="work-media">
+          <img src="images/charpente-4.jpg" alt="Traitement de charpente à Fontainebleau" loading="lazy">
+          <span class="work-badge">Charpente</span>
+        </div>
+        <div class="work-body">
+          <h3>Traitement de charpente</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Fontainebleau (77)</p>
+          <p class="work-desc">Traitement curatif et préventif contre les insectes et les champignons.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="isolation">
+        <div class="work-media">
+          <img src="images/isolation-1.jpg" alt="Isolation des combles à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Isolation</span>
+        </div>
+        <div class="work-body">
+          <h3>Isolation des combles</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Isolation thermique des combles pour plus de confort et d'économies d'énergie.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="isolation">
+        <div class="work-media">
+          <img src="images/isolation-6.jpg" alt="Isolation sous toiture à Vaux-le-Pénil" loading="lazy">
+          <span class="work-badge">Isolation</span>
+        </div>
+        <div class="work-body">
+          <h3>Isolation sous toiture</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Vaux-le-Pénil (77)</p>
+          <p class="work-desc">Pose d'un isolant performant sous rampants, sans perte de surface habitable.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="fenetre">
+        <div class="work-media">
+          <img src="images/fenetre-toit-1.jpg" alt="Pose de fenêtre de toit à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Fenêtre de toit</span>
+        </div>
+        <div class="work-body">
+          <h3>Pose de fenêtre de toit</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Installation de fenêtres de toit (Velux) avec étanchéité garantie.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="fenetre">
+        <div class="work-media">
+          <img src="images/fenetre-toit-5.jpg" alt="Installation de fenêtre de toit à Samois-sur-Seine" loading="lazy">
+          <span class="work-badge">Fenêtre de toit</span>
+        </div>
+        <div class="work-body">
+          <h3>Installation Velux</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Samois-sur-Seine (77)</p>
+          <p class="work-desc">Création d'ouverture et pose de fenêtre de toit sur mesure.</p>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="nettoyage">
+        <div class="work-media">
+          <img src="images/nettoyage-toiture-1.jpg" alt="Démoussage de toiture à Bois-le-Roi" loading="lazy">
+          <span class="work-badge">Nettoyage</span>
+        </div>
+        <div class="work-body">
+          <h3>Démoussage de toiture</h3>
+          <p class="work-loc"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bois-le-Roi (77)</p>
+          <p class="work-desc">Nettoyage, démoussage et application d'un traitement hydrofuge protecteur.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="works-cta">
+      <p>Votre toiture mérite le même soin.</p>
+      <a href="contact.html#devis" class="carousel-cta">
+        Demander mon devis gratuit
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -506,6 +767,25 @@
     }
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
+
+    // Réalisations gallery filter
+    var worksFilters = document.getElementById('worksFilters');
+    var worksGrid = document.getElementById('worksGrid');
+    if (worksFilters && worksGrid) {
+      worksFilters.addEventListener('click', function (e) {
+        var btn = e.target.closest('.works-filter');
+        if (!btn) return;
+        var btns = worksFilters.querySelectorAll('.works-filter');
+        for (var i = 0; i < btns.length; i++) btns[i].classList.remove('is-active');
+        btn.classList.add('is-active');
+        var f = btn.getAttribute('data-filter');
+        var cards = worksGrid.querySelectorAll('.work-card');
+        for (var j = 0; j < cards.length; j++) {
+          var show = (f === 'all') || (cards[j].getAttribute('data-cat') === f);
+          cards[j].style.display = show ? '' : 'none';
+        }
+      });
+    }
   })();
 </script>
 
