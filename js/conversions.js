@@ -1,8 +1,7 @@
 /* =============================================================
    Suivi des conversions Google Ads (AW-711090610) — Jeanmaire
-   Conversion "Contact" (ads_conversion_Nous_contacter_1) :
-     1) clic sur un numero de telephone (tel:)
-     2) envoi reussi d'un formulaire (devis ou contact)
+     - "Contact"          = clic sur un numero de telephone (tel:)
+     - "Demande de devis" = envoi reussi d'un formulaire (devis/contact)
    Fonctionne avec la balise gtag deja presente dans le <head>.
    ============================================================= */
 (function () {
@@ -11,6 +10,13 @@
   function fireContactConversion() {
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'ads_conversion_Nous_contacter_1', {});
+    }
+  }
+
+  /* Conversion "Demande de devis" (formulaire envoye avec succes) */
+  function fireDevisConversion() {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: 'AW-711090610/mg4pCO_i_dEcELLDidMC' });
     }
   }
 
@@ -32,7 +38,7 @@
         var visible = el.offsetParent !== null &&
                       window.getComputedStyle(el).display !== 'none';
         if (visible) {
-          fireContactConversion();
+          fireDevisConversion();
           obs.disconnect();
         }
       });
