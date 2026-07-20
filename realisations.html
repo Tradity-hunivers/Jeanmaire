@@ -45,8 +45,8 @@
   padding: calc(var(--header-h) + 2rem) 0 4rem;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 60% 45% at 50% 30%, rgba(4,107,210,.10), transparent 65%),
-    radial-gradient(ellipse 55% 40% at 80% 80%, rgba(255,105,0,.06), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 50% 30%, rgba(135,98,52,.08), transparent 65%),
+    radial-gradient(ellipse 55% 40% at 80% 80%, rgba(60,93,130,.06), transparent 60%),
     var(--bg);
 }
 
@@ -64,12 +64,12 @@
 }
 .carousel-hero::before {
   top: -100px; right: -120px;
-  background: radial-gradient(circle, rgba(4,107,210,.18), transparent 70%);
+  background: radial-gradient(circle, rgba(135,98,52,.13), transparent 70%);
   animation: chPulse 8s ease-in-out infinite;
 }
 .carousel-hero::after {
   bottom: -120px; left: -120px;
-  background: radial-gradient(circle, rgba(255,105,0,.10), transparent 70%);
+  background: radial-gradient(circle, rgba(60,93,130,.10), transparent 70%);
   animation: chPulse 10s ease-in-out infinite reverse;
 }
 @keyframes chPulse {
@@ -118,8 +118,8 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow:
-    0 20px 50px -12px rgba(0,0,0,0.7),
-    0 0 0 1px rgba(232,228,223,0.06);
+    0 18px 40px -14px rgba(6,14,24,0.28),
+    0 0 0 1px var(--border);
   transform-style: preserve-3d;
   transition: box-shadow .35s var(--ease), filter .35s var(--ease);
   cursor: pointer;
@@ -153,9 +153,9 @@
 
 .carousel-card:hover {
   box-shadow:
-    0 30px 70px -10px rgba(4,107,210,0.5),
-    0 0 0 1px rgba(4,107,210,0.5);
-  filter: brightness(1.1);
+    0 26px 55px -12px rgba(135,98,52,0.42),
+    0 0 0 1px rgba(135,98,52,0.5);
+  filter: brightness(1.04);
 }
 .carousel-card:hover img { transform: scale(1.12); }
 .carousel-card:hover::after { opacity: 1; }
@@ -166,24 +166,23 @@
   bottom: 10px;
   left: 10px;
   right: 10px;
-  background: rgba(13,13,20,0.78);
+  background: rgba(6,14,24,0.82);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: var(--ink);
+  color: #FFFFFF;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(232,228,223,0.1);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .3s var(--ease), transform .3s var(--ease);
-}
-.carousel-card:hover .card-tag {
+  border: 1px solid rgba(255,255,255,0.18);
   opacity: 1;
   transform: translateY(0);
+  transition: background .3s var(--ease);
+}
+.carousel-card:hover .card-tag {
+  background: rgba(6,14,24,0.92);
 }
 
 /* Content */
@@ -201,8 +200,8 @@
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(4,107,210,0.10);
-  border: 1px solid rgba(4,107,210,0.3);
+  background: var(--accent-light);
+  border: 1px solid rgba(135,98,52,0.35);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -238,7 +237,7 @@
 .carousel-desc {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: rgba(232,228,223,0.75);
+  color: var(--muted);
   margin-bottom: 2rem;
 }
 
@@ -257,12 +256,12 @@
   border: none;
   cursor: pointer;
   transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
-  box-shadow: 0 12px 30px -10px rgba(4,107,210,0.6);
+  box-shadow: 0 12px 30px -10px rgba(135,98,52,0.55);
 }
 .carousel-cta:hover {
   background: var(--accent-dark);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 40px -10px rgba(4,107,210,0.8);
+  box-shadow: 0 18px 40px -10px rgba(135,98,52,0.7);
 }
 .carousel-cta:active { transform: scale(0.98); }
 .carousel-cta svg { transition: transform .25s var(--ease); }
@@ -287,23 +286,22 @@
   text-align: center;
   padding: 1.75rem 1.25rem;
   border-radius: 16px;
-  background: rgba(22,22,22,0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(232,228,223,0.08);
-  transition: transform .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px -8px rgba(6,14,24,0.10);
+  transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .feature-card:hover {
-  background: rgba(22,22,22,0.85);
-  border-color: rgba(4,107,210,0.4);
+  border-color: rgba(135,98,52,0.45);
+  box-shadow: 0 18px 36px -18px rgba(6,14,24,0.22);
   transform: translateY(-4px);
 }
 .feature-icon {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(4,107,210,0.12);
-  border: 1px solid rgba(4,107,210,0.3);
+  background: var(--accent-light);
+  border: 1px solid rgba(135,98,52,0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -312,9 +310,9 @@
   transition: background .3s var(--ease);
 }
 .feature-card:hover .feature-icon {
-  background: rgba(255,105,0,0.15);
-  border-color: rgba(255,105,0,0.4);
-  color: #FF6900;
+  background: rgba(135,98,52,0.20);
+  border-color: rgba(135,98,52,0.55);
+  color: var(--accent-dark);
 }
 .feature-card h3 {
   font-family: var(--font-display);
@@ -328,7 +326,7 @@
 .feature-card p {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: rgba(232,228,223,0.7);
+  color: var(--muted);
 }
 
 /* Mobile stacked carousel */
@@ -343,7 +341,7 @@
   position: relative;
   padding: 5rem 1rem 6rem;
   background:
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(4,107,210,.07), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(135,98,52,.06), transparent 60%),
     var(--bg);
 }
 .works-inner { max-width: 1200px; margin: 0 auto; }
@@ -351,7 +349,7 @@
 .works-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 14px; border-radius: 999px;
-  background: rgba(4,107,210,0.10); border: 1px solid rgba(4,107,210,0.3);
+  background: var(--accent-light); border: 1px solid rgba(135,98,52,0.35);
   color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem;
 }
@@ -360,7 +358,7 @@
   font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1;
   letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem;
 }
-.works-sub { font-size: 1.02rem; line-height: 1.6; color: rgba(232,228,223,0.72); }
+.works-sub { font-size: 1.02rem; line-height: 1.6; color: var(--muted); }
 
 .works-filters {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
@@ -368,12 +366,12 @@
 }
 .works-filter {
   padding: 8px 18px; border-radius: 999px;
-  background: rgba(22,22,22,0.55); border: 1px solid rgba(232,228,223,0.12);
-  color: rgba(232,228,223,0.78); font-family: var(--font-display);
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--muted); font-family: var(--font-display);
   font-size: 0.9rem; font-weight: 500; cursor: pointer;
   transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
 }
-.works-filter:hover { border-color: rgba(4,107,210,0.5); color: var(--ink); }
+.works-filter:hover { border-color: rgba(135,98,52,0.5); color: var(--ink); }
 .works-filter.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .works-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
@@ -382,13 +380,14 @@
 
 .work-card {
   border-radius: 18px; overflow: hidden;
-  background: rgba(22,22,22,0.55); border: 1px solid rgba(232,228,223,0.08);
+  background: var(--card); border: 1px solid var(--border);
+  box-shadow: 0 4px 16px -8px rgba(6,14,24,0.10);
   transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .work-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(4,107,210,0.45);
-  box-shadow: 0 24px 50px -20px rgba(4,107,210,0.5);
+  border-color: rgba(135,98,52,0.45);
+  box-shadow: 0 24px 50px -20px rgba(6,14,24,0.30);
 }
 .work-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
 .work-media img {
@@ -398,11 +397,11 @@
 .work-card:hover .work-media img { transform: scale(1.08); }
 .work-badge {
   position: absolute; top: 12px; left: 12px;
-  background: rgba(13,13,20,0.78);
+  background: rgba(6,14,24,0.82);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  color: var(--ink); font-family: var(--font-mono);
+  color: #FFFFFF; font-family: var(--font-mono);
   font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 5px 10px; border-radius: 8px; border: 1px solid rgba(232,228,223,0.12);
+  padding: 5px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18);
 }
 .work-body { padding: 1.25rem 1.25rem 1.5rem; }
 .work-body h3 {
@@ -414,7 +413,7 @@
   font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent);
   margin-bottom: 0.6rem;
 }
-.work-desc { font-size: 0.92rem; line-height: 1.55; color: rgba(232,228,223,0.7); }
+.work-desc { font-size: 0.92rem; line-height: 1.55; color: var(--muted); }
 
 .works-cta { text-align: center; margin-top: 3.5rem; }
 .works-cta p {
@@ -711,44 +710,51 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col footer-brand">
-      <img src="images/logo-jeanmaire.png" alt="Jeanmaire Couverture" class="footer-logo">
-      <p>Couvreur Bois le roi · Seine-et-Marne (77)<br>Toiture, zinguerie, charpente, isolation.</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Jeanmaire <strong>Couverture</strong></span>
+        <p>Couvreur Bois le roi professionnel. Toiture, zinguerie, charpente, isolation et inspection par drone dans tout le Seine-et-Marne.</p>
+        <p class="footer-siret">SIRET : 534 851 282 00010</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="couverture.html">Couverture</a></li>
+          <li><a href="zinguerie.html">Zinguerie</a></li>
+          <li><a href="charpente.html">Traitement charpente</a></li>
+          <li><a href="fenetres-toit.html">Fenêtres de toit</a></li>
+          <li><a href="isolation.html">Isolation &amp; Étanchéité</a></li>
+          <li><a href="nettoyage.html">Nettoyage toiture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="content/blog/">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="conditions-generales.html">Conditions générales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address class="footer-address">
+          <ul>
+            <li><a href="tel:0939247951">09 39 24 79 51</a></li>
+            <li><a href="mailto:Jeanmairecouverture@gmail.com">Jeanmairecouverture@gmail.com</a></li>
+            <li><span itemprop="streetAddress">1 place de la cité</span></li>
+            <li><span itemprop="postalCode">77590</span> <span itemprop="addressLocality">Bois-le-Roi</span></li>
+          </ul>
+        </address>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="couverture.html">Couverture</a></li>
-        <li><a href="zinguerie.html">Zinguerie</a></li>
-        <li><a href="charpente.html">Charpente</a></li>
-        <li><a href="fenetres-toit.html">Fenêtres de toit</a></li>
-        <li><a href="isolation.html">Isolation</a></li>
-        <li><a href="nettoyage.html">Nettoyage toiture</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Jeanmaire Couverture &mdash; Tous droits réservés</p>
+      <p>Site par <a href="https://helpaiagency.fr" target="_blank" rel="noopener">HelpAi</a></p>
     </div>
-    <div class="footer-col">
-      <h4>Entreprise</h4>
-      <ul>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="realisations.html">Réalisations</a></li>
-        <li><a href="content/blog/">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-        <li><a href="conditions-generales.html">CGV</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:0939247951">09 39 24 79 51</a></li>
-        <li><a href="mailto:Jeanmairecouverture@gmail.com">Jeanmairecouverture@gmail.com</a></li>
-        <li>1 place de la cité<br>77590 Bois-le-Roi</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; <span id="year"></span> Jeanmaire Couverture &middot; Tous droits réservés</p>
   </div>
 </footer>
 
