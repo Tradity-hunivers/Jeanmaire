@@ -20,6 +20,43 @@
 <style>body{font-family:system-ui,sans-serif;text-align:center;padding:4rem 1rem;color:#3b4a5c}a{color:#856636;font-weight:600}</style>
 <script defer src="/breadcrumb.js"></script>
 <style>/* fil d'Ariane masque : chevauchait le header (JSON-LD conserve) */.ha-breadcrumb{display:none!important}</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Blog — Jeanmaire Couverture",
+      "url": "https://toiture-jeanmaire.fr/blog",
+      "author": {
+        "@type": "Organization",
+        "name": "Entreprise Jeanmaire - Bois le Roi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Entreprise Jeanmaire - Bois le Roi"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://toiture-jeanmaire.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog — Jeanmaire Couverture",
+          "item": "https://toiture-jeanmaire.fr/blog"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <p>Notre blog a une nouvelle adresse. <a href="/content/blog/">Voir tous nos articles &rarr;</a></p>
