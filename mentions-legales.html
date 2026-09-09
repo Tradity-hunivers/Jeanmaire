@@ -25,6 +25,30 @@
 <!-- Legal-specific styles now in pages.css -->
 <script defer src="/breadcrumb.js"></script>
 <style>/* fil d'Ariane masque : chevauchait le header (JSON-LD conserve) */.ha-breadcrumb{display:none!important}</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://toiture-jeanmaire.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mentions légales & Politique de confidentialité | Jeanmaire Couverture",
+          "item": "https://toiture-jeanmaire.fr/mentions-legales"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
