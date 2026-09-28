@@ -2926,9 +2926,8 @@
   <!-- ====================== SEO PRINCIPAL ====================== -->
   <title>Blog &amp; conseils — Couvreur Bois le Roi</title>
   <meta name="description" content="Tous nos articles, conseils et actualites.">
-  <meta name="keywords" content="">
   <link rel="canonical" href="https://toiture-jeanmaire.fr/content/blog/">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Daniel Jeanmaire">
 
   <!-- ====================== OPEN GRAPH ====================== -->
@@ -2940,8 +2939,8 @@
   <meta property="og:url" content="https://toiture-jeanmaire.fr/content/blog/">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="Blog">
-  <meta property="article:published_time" content="2026-09-23T19:59:27.804Z">
-  <meta property="article:modified_time" content="2026-09-23T19:59:27.804Z">
+  <meta property="article:published_time" content="2026-09-28T13:33:22.259Z">
+  <meta property="article:modified_time" content="2026-09-28T13:33:22.259Z">
   <meta property="article:author" content="Jeanmaire Couverture">
 
   <!-- ====================== TWITTER CARD ====================== -->
@@ -2957,39 +2956,80 @@
 
   <!-- ====================== JSON-LD : BlogPosting ====================== -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Blog",
-    "description": "Tous nos articles, conseils et actualites.",
-    "image": "",
-    "datePublished": "2026-09-23T19:59:27.804Z",
-    "dateModified": "2026-09-23T19:59:27.804Z",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://toiture-jeanmaire.fr/content/blog/" },
-    "author": { "@type": "Person", "@id": "https://toiture-jeanmaire.fr/auteur#auteur", "name": "Daniel Jeanmaire", "url": "https://toiture-jeanmaire.fr/auteur" },
-    "publisher": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Organization",
+      "@id": "https://toiture-jeanmaire.fr/#organization",
       "name": "Jeanmaire Couverture",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://toiture-jeanmaire.fr/images/logo-jeanmaire.png"
-      }
+      "url": "https://toiture-jeanmaire.fr/",
+      "logo": { "@type": "ImageObject", "@id": "https://toiture-jeanmaire.fr/#logo", "url": "https://toiture-jeanmaire.fr/images/logo-jeanmaire.png" },
+      "image": { "@id": "https://toiture-jeanmaire.fr/#logo" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://toiture-jeanmaire.fr/#website",
+      "url": "https://toiture-jeanmaire.fr/",
+      "name": "Jeanmaire Couverture",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://toiture-jeanmaire.fr/#organization" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://toiture-jeanmaire.fr/auteur#auteur",
+      "name": "Daniel Jeanmaire",
+      "url": "https://toiture-jeanmaire.fr/auteur",
+      "worksFor": { "@id": "https://toiture-jeanmaire.fr/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://toiture-jeanmaire.fr/content/blog/#webpage",
+      "url": "https://toiture-jeanmaire.fr/content/blog/",
+      "name": "Blog &amp; conseils — Couvreur Bois le Roi",
+      "description": "Tous nos articles, conseils et actualites.",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "https://toiture-jeanmaire.fr/#website" },
+      "breadcrumb": { "@id": "https://toiture-jeanmaire.fr/content/blog/#breadcrumb" },
+      "primaryImageOfPage": { "@id": "https://toiture-jeanmaire.fr/content/blog/#image" },
+      "datePublished": "2026-09-28T13:33:22.259Z",
+      "dateModified": "2026-09-28T13:33:22.259Z"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://toiture-jeanmaire.fr/content/blog/#image",
+      "url": "",
+      "contentUrl": ""
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://toiture-jeanmaire.fr/content/blog/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://toiture-jeanmaire.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://toiture-jeanmaire.fr/content/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Blog" }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://toiture-jeanmaire.fr/content/blog/#article",
+      "headline": "Blog",
+      "description": "Tous nos articles, conseils et actualites.",
+      "image": { "@id": "https://toiture-jeanmaire.fr/content/blog/#image" },
+      "datePublished": "2026-09-28T13:33:22.259Z",
+      "dateModified": "2026-09-28T13:33:22.259Z",
+      "inLanguage": "fr-FR",
+      "author": { "@id": "https://toiture-jeanmaire.fr/auteur#auteur" },
+      "publisher": { "@id": "https://toiture-jeanmaire.fr/#organization" },
+      "isPartOf": { "@id": "https://toiture-jeanmaire.fr/content/blog/#webpage" },
+      "mainEntityOfPage": { "@id": "https://toiture-jeanmaire.fr/content/blog/#webpage" }
     }
-  }
-  </script>
+  ]
+}
+</script>
 
   <!-- ====================== JSON-LD : BreadcrumbList ====================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://toiture-jeanmaire.fr" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://toiture-jeanmaire.fr/content/blog/" },
-      { "@type": "ListItem", "position": 3, "name": "Blog", "item": "https://toiture-jeanmaire.fr/content/blog/" }
-    ]
-  }
-  </script>
+  
 
   <style>
     /* ============================================================
@@ -3397,12 +3437,15 @@
     }
   </style>
 <script defer src="/breadcrumb.js"></script>
+<style>.skip-lien{position:absolute;left:-9999px;top:0;z-index:999;padding:10px 16px;background:#111;color:#fff;text-decoration:none}
+.skip-lien:focus{left:0}</style>
 <link rel="icon" href="https://toiture-jeanmaire.fr/favicon.ico" sizes="any">
 <link rel="icon" href="https://toiture-jeanmaire.fr/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="https://toiture-jeanmaire.fr/apple-touch-icon.png">
 <style>.eyebrow,.byline,.hero-fig{display:none!important}</style></head>
 
 <body>
+<a class="skip-lien" href="#main">Aller au contenu</a>
 
   
 
@@ -3453,7 +3496,7 @@
     </nav>
   </div>
 
-  <main id="contenu">
+  <main id="main">
     <!-- ====================== HERO ====================== -->
     <section class="hero wrap" aria-labelledby="titre-article">
       <p class="badge">Conseils &amp; expertise toiture</p>
@@ -3471,7 +3514,7 @@
         <div class="meta-pills">
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-            <time datetime="2026-09-23T19:59:27.804Z">2026</time>
+            <time datetime="2026-09-28T13:33:22.259Z">2026</time>
           </span>
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
