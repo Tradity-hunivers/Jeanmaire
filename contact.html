@@ -150,7 +150,7 @@
       <div class="cmf-row">
         <div class="cmf-field">
           <label for="name">Nom complet</label>
-          <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+          <input type="text" id="name" name="nom" placeholder="Jean Dupont" required>
         </div>
         <div class="cmf-field">
           <label for="email">Email</label>
@@ -163,7 +163,7 @@
         <label for="phone">Téléphone</label>
         <div class="cmf-phone">
           <span class="cmf-phone-prefix">🇫🇷 +33</span>
-          <input type="tel" id="phone" name="phone" placeholder="6 12 34 56 78">
+          <input type="tel" id="phone" name="Téléphone" placeholder="6 12 34 56 78">
         </div>
       </div>
 
@@ -374,7 +374,7 @@ if(typeof gsap!=='undefined'){
   function track(form){
     try{
       var nom=val(form,'nom')||val(form,'name');
-      var tel=val(form,'tel')||val(form,'phone');
+      var tel=val(form,'tel')||val(form,'Téléphone')||val(form,'phone');
       var email=val(form,'email');
       var message=val(form,'message');
       var ville=val(form,'ville');
