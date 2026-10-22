@@ -25,10 +25,9 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="pages.css">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="pages.css?v=20261022b">
 <!-- Legal-specific styles now in pages.css -->
 <script defer src="/breadcrumb.js"></script>
 <style>/* fil d'Ariane masque : chevauchait le header (JSON-LD conserve) */.ha-breadcrumb{display:none!important}</style>
@@ -77,6 +76,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
           <a href="fenetres-toit.html">Fenêtres de toit</a>
           <a href="isolation.html">Isolation & Étanchéité</a>
           <a href="nettoyage.html">Nettoyage toiture</a>
+          <a href="ramonage.html">Ramonage</a>
         </div>
       </div>
       <a href="content/blog/" class="nav-link">Blog</a>
@@ -105,6 +105,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
   <a href="fenetres-toit.html">Fenêtres de toit</a>
   <a href="isolation.html">Isolation & Étanchéité</a>
   <a href="nettoyage.html">Nettoyage toiture</a>
+  <a href="ramonage.html">Ramonage</a>
   <a href="content/blog/">Blog</a>
   <a href="contact.html">Contact</a>
   <a href="tel:0939247951" class="btn btn-primary" style="margin-top:1rem">09 39 24 79 51</a>
@@ -259,6 +260,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
           <li><a href="fenetres-toit.html">Fenêtres de toit</a></li>
           <li><a href="isolation.html">Isolation & Étanchéité</a></li>
           <li><a href="nettoyage.html">Nettoyage toiture</a></li>
+          <li><a href="ramonage.html">Ramonage</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -342,5 +344,13 @@ if(typeof gsap!=='undefined'){
 
   <script defer src="/js/conversions.js"></script>
 <script defer src="/helpai-conversions.js"></script>
+<noscript><style>.fade-up{opacity:1!important;transform:none!important}</style></noscript>
+<script>
+/* Filet : si GSAP n'a pas pu se charger, le contenu doit rester visible. */
+(function(){if(typeof gsap!=='undefined')return;
+var r=function(){document.querySelectorAll('.fade-up').forEach(function(e){
+  e.style.opacity=1;e.style.transform='none';});};
+if(document.readyState!=='loading')r();else document.addEventListener('DOMContentLoaded',r);})();
+</script>
 </body>
 </html>

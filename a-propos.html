@@ -30,10 +30,9 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
 <meta property="og:description" content="Artisan couvreur a Bois-le-Roi depuis plus de 15 ans. Garantie decennale, inspection drone, devis gratuit.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toiture-jeanmaire.fr/a-propos">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="pages.css">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/poppins-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="pages.css?v=20261022b">
 
 <!-- JSON-LD : LocalBusiness + Organization -->
 <script type="application/ld+json">
@@ -462,6 +461,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
           <a href="fenetres-toit.html">Fenêtres de toit</a>
           <a href="isolation.html">Isolation & Étanchéité</a>
           <a href="nettoyage.html">Nettoyage toiture</a>
+          <a href="ramonage.html">Ramonage</a>
         </div>
       </div>
       <a href="a-propos.html" class="nav-link active">À propos</a>
@@ -491,6 +491,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
   <a href="fenetres-toit.html">Fenêtres de toit</a>
   <a href="isolation.html">Isolation & Étanchéité</a>
   <a href="nettoyage.html">Nettoyage toiture</a>
+  <a href="ramonage.html">Ramonage</a>
   <a href="a-propos.html">À propos</a>
   <a href="content/blog/">Blog</a>
   <a href="contact.html">Contact</a>
@@ -756,6 +757,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
           <li><a href="fenetres-toit.html">Fenêtres de toit</a></li>
           <li><a href="isolation.html">Isolation & Étanchéité</a></li>
           <li><a href="nettoyage.html">Nettoyage toiture</a></li>
+          <li><a href="ramonage.html">Ramonage</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -826,5 +828,13 @@ if(typeof gsap!=='undefined'){
 
   <script defer src="/js/conversions.js"></script>
 <script defer src="/helpai-conversions.js"></script>
+<noscript><style>.fade-up{opacity:1!important;transform:none!important}</style></noscript>
+<script>
+/* Filet : si GSAP n'a pas pu se charger, le contenu doit rester visible. */
+(function(){if(typeof gsap!=='undefined')return;
+var r=function(){document.querySelectorAll('.fade-up').forEach(function(e){
+  e.style.opacity=1;e.style.transform='none';});};
+if(document.readyState!=='loading')r();else document.addEventListener('DOMContentLoaded',r);})();
+</script>
 </body>
 </html>
