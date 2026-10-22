@@ -127,6 +127,18 @@
   // Handle choices
   function closeBanner(choice) {
     localStorage.setItem('cookie_consent', choice);
+    // Mode consentement v2 : la mesure ne s'active qu'apres acceptation.
+    // Sur "Refuser", rien n'est accorde : les balises restent en mode denied.
+    try {
+      if (typeof gtag === 'function' && choice === 'accepted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+    } catch (e) { /* le bandeau ne doit jamais casser la page */ }
     banner.style.transform = 'translateY(100%)';
     setTimeout(function() {
       if (banner.parentNode) banner.parentNode.removeChild(banner);
