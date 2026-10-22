@@ -6,6 +6,7 @@
 
 - [Accueil](https://toiture-jeanmaire.fr/) : présentation de l'entreprise et de tous les services
 - [Couverture](https://toiture-jeanmaire.fr/couverture) : pose et rénovation de toitures (tuiles, ardoises, zinc, bac acier)
+- [Réparation de fuite de toiture](https://toiture-jeanmaire.fr/reparation-fuite-toiture) : recherche de l’origine de l’infiltration, bâchage et mise hors d’eau, réparation de tuiles, solins, faîtages et raccords de fenêtres de toit
 - [Zinguerie](https://toiture-jeanmaire.fr/zinguerie) : gouttières, noues, chéneaux et descentes
 - [Traitement de charpente](https://toiture-jeanmaire.fr/charpente) : traitement préventif et curatif des bois
 - [Fenêtres de toit](https://toiture-jeanmaire.fr/fenetres-toit) : pose de fenêtres de toit type Velux

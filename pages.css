@@ -2183,3 +2183,127 @@ a.contact-min-direct-item:hover {
   color: var(--accent);
   opacity: .7;
 }
+
+/* ============================================================
+   PAGE REPARATION DE FUITE  (ajout 22/10/2026)
+   Classes absentes de la charte graphique existante.
+   Tokens repris tels quels : --accent, --ink, --muted, --border.
+   ============================================================ */
+
+/* Lien d'evitement (accessibilite RGAA) : invisible jusqu'au focus clavier */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:1000;
+  background:var(--accent);color:#fff;
+  padding:.75rem 1.25rem;border-radius:0 0 6px 0;
+  font-family:var(--font-body);font-size:.95rem;text-decoration:none;
+}
+.skip-link:focus{left:0}
+
+/* Tableau comparatif : defile seul sur mobile, jamais la page */
+.tbl-wrap{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg-accent,#fff);
+}
+.tbl{
+  width:100%;
+  min-width:34rem;          /* en dessous, le tableau defile dans son cadre */
+  border-collapse:collapse;
+  font-family:var(--font-body);
+  font-size:.92rem;
+}
+.tbl caption{
+  caption-side:top;
+  text-align:left;
+  padding:1rem 1.1rem .75rem;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.tbl th,
+.tbl td{
+  padding:.85rem 1.1rem;
+  text-align:left;
+  vertical-align:top;
+  border-top:1px solid var(--border);
+}
+.tbl thead th{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:.82rem;
+  letter-spacing:.02em;
+  color:var(--ink);
+  background:var(--bg-darker);
+  border-top:none;
+}
+.tbl tbody td:first-child{
+  font-weight:600;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.tbl tbody td{color:var(--muted)}
+.tbl tbody tr:hover td{background:var(--accent-light)}
+
+@media (min-width:768px){
+  .tbl{font-size:.95rem}
+  .tbl th,.tbl td{padding:1rem 1.25rem}
+}
+
+/* Sous 640 px, le tableau se lit en cartes : la 3e colonne (l'intervention)
+   doit rester visible sans defilement lateral. Les roles ARIA explicites
+   conservent la semantique de tableau malgre display:block. */
+@media (max-width:639px){
+  .tbl-wrap{border:none;background:none;overflow:visible}
+  .tbl{min-width:0;display:block;font-size:.9rem}
+  .tbl caption{padding:0 0 .9rem}
+  .tbl thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .tbl tbody,.tbl tr,.tbl td{display:block;width:auto}
+  .tbl tr{
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--bg-accent,#fff);
+    margin-bottom:.8rem;
+    padding:.4rem 0 .7rem;
+  }
+  .tbl td{border-top:none;padding:.45rem 1.1rem;white-space:normal}
+  .tbl tbody td:first-child{
+    font-size:1.02rem;
+    padding-top:.8rem;
+    padding-bottom:.6rem;
+    white-space:normal;
+  }
+  .tbl td:not(:first-child)::before{
+    content:attr(data-label);
+    display:block;
+    font-family:var(--font-mono);
+    font-size:.67rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:.2rem;
+  }
+  .tbl tbody tr:hover td{background:transparent}
+}
+
+/* Fil d'Ariane de la page fuite : zone tactile confortable sur mobile.
+   Cible .hero (les pages articles utilisent .article-hero : non touchees). */
+.hero .article-breadcrumb{row-gap:.15rem;margin-bottom:1.1rem}
+.hero .article-breadcrumb a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding-block:.1rem;
+}
+.hero .article-breadcrumb .sep,
+.hero .article-breadcrumb span[aria-current]{
+  display:inline-flex;align-items:center;min-height:44px;
+}
+@media (min-width:768px){
+  .hero .article-breadcrumb a,
+  .hero .article-breadcrumb .sep,
+  .hero .article-breadcrumb span[aria-current]{min-height:0}
+}
