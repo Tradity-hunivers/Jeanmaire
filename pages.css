@@ -2307,3 +2307,30 @@ a.contact-min-direct-item:hover {
   .hero .article-breadcrumb .sep,
   .hero .article-breadcrumb span[aria-current]{min-height:0}
 }
+
+/* Titre du tableau des origines, sous la reponse directe de la page fuite. */
+.t-h3-tbl{
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  max-width:42rem;
+  margin:0 auto 1.4rem;
+  text-wrap:balance;
+}
+@media (min-width:768px){ .t-h3-tbl{font-size:1.45rem;margin-bottom:1.8rem} }
+/* la 1re colonne porte desormais des liens : elle doit pouvoir passer a la ligne */
+.tbl tbody td:first-child{white-space:normal}
+.tbl td a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+
+/* Tableau de la page fuite : cartes resserrees sur mobile (hauteur -15 %)
+   sans toucher a la lisibilite. */
+@media (max-width:639px){
+  .tbl{font-size:.88rem}
+  .tbl tr{margin-bottom:.55rem;padding:.3rem 0 .5rem}
+  .tbl td{padding:.3rem 1rem;line-height:1.45}
+  .tbl tbody td:first-child{font-size:.98rem;padding-top:.6rem;padding-bottom:.35rem}
+  .tbl td:not(:first-child)::before{font-size:.64rem;margin-bottom:.1rem}
+  .tbl caption{padding:0 0 .7rem;font-size:.68rem}
+}
