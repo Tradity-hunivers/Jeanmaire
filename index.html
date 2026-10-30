@@ -1064,6 +1064,10 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
   var SLUG='daniel-jeanmaire-bois-le-roi';
   var SECRET='b9766593-536c-4cd8-9893-b9dfd36b8cae';
   function val(form,n){var el=form.querySelector('[name="'+n+'"]');return el&&el.value?el.value.trim():'';}
+  function origine(p){var o=window.helpaiOrigine?window.helpaiOrigine():{};p.metadata=p.metadata||{};
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){if(!p[k]&&o[k])p[k]=o[k];});
+    ['gclid','gbraid','wbraid','referrer','landing','canal'].forEach(function(k){if(!p.metadata[k]&&o[k])p.metadata[k]=o[k];});
+    return p;}
   function track(form){
     try{
       var nom=val(form,'nom')||val(form,'name');
@@ -1077,7 +1081,7 @@ try{if(localStorage.getItem('cookie_consent')==='accepted'){gtag('consent','upda
       if(ville)meta.ville=ville;
       if(service)meta.service=service;
       fetch(LEAD_URL,{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({client_slug:SLUG,webhook_secret:SECRET,source:'site',nom:nom,telephone:tel,email:email,message:message,metadata:meta})
+        body:JSON.stringify(origine({client_slug:SLUG,webhook_secret:SECRET,source:'site',nom:nom,telephone:tel,email:email,message:message,metadata:meta}))
       }).catch(function(){});
     }catch(e){}
   }

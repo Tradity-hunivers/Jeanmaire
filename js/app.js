@@ -593,6 +593,7 @@
         });
         var result = await response.json();
         if (result.success) {
+          window.dispatchEvent(new CustomEvent('helpai:lead',{detail:{form_id:form.id}}));
           try { localStorage.removeItem(key); } catch (e2) {}
           // Hide form fields, show success
           Array.from(form.children).forEach(function (child) {
