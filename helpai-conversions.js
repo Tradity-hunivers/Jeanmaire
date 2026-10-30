@@ -66,7 +66,14 @@
   var dernier = 0;
   function lead(formId, methode) {
     if (Date.now() - dernier < 10000) return;
+    if (methode === 'page_merci') {
+      // deja compte juste avant la redirection vers /merci (signal confirme ou message de succes)
+      var avant = 0;
+      try { avant = Number(sessionStorage.getItem('helpai_lead_ts') || 0); } catch (e) { avant = 0; }
+      if (Date.now() - avant < 60000) return;
+    }
     dernier = Date.now();
+    try { sessionStorage.setItem('helpai_lead_ts', String(dernier)); } catch (e) { /* rien */ }
     envoyer('generate_lead', { form_id: formId || '', page_path: location.pathname, methode: methode, canal: origine.canal });
   }
   window.addEventListener('helpai:lead', function (e) {
