@@ -10,13 +10,13 @@
   /* ---------- DATA ---------- */
   // 8 photos picked from /images covering each Jeanmaire service
   const IMAGES = [
-    { src: 'images/toiture-2.png',          alt: 'Rénovation de toiture',    tag: 'Couverture',     rotation: -15 },
-    { src: 'images/zinguerie-2.jpg',        alt: 'Pose de zinguerie zinc',   tag: 'Zinguerie',      rotation: -8  },
-    { src: 'images/charpente-3.jpg',        alt: 'Charpente traditionnelle', tag: 'Charpente',      rotation: 5   },
-    { src: 'images/fenetre-toit-2.jpg',     alt: 'Pose de fenêtre de toit',  tag: 'Velux',          rotation: 12  },
-    { src: 'images/isolation-3.jpg',        alt: 'Isolation des combles',    tag: 'Isolation',      rotation: -12 },
-    { src: 'images/nettoyage-toiture-1.jpg',alt: 'Démoussage de toiture',    tag: 'Nettoyage',      rotation: 8   },
-    { src: 'images/toiture-5.jpg',          alt: 'Toiture neuve en chantier',tag: 'Pose toiture',   rotation: -5  }
+    { src: 'images/toit-tuiles-plates-lucarnes.jpg',          alt: 'Grand toit en tuiles plates percé de lucarnes',    tag: 'Couverture',     rotation: -15 },
+    { src: 'images/toiture-bac-acier-nervure.jpg',        alt: 'Toiture en bac acier nervuré au-dessus d\'une façade',   tag: 'Zinguerie',      rotation: -8  },
+    { src: 'images/fermes-charpente-pignon.jpg',        alt: 'Fermes de charpente en bois sur un pignon en construction', tag: 'Charpente',      rotation: 5   },
+    { src: 'images/fenetre-de-toit-store-tuiles.jpg',     alt: 'Fenêtre de toit équipée d\'un store, sur une toiture en tuiles',  tag: 'Velux',          rotation: 12  },
+    { src: 'images/pose-laine-de-verre-mur.jpg',        alt: 'Pose de rouleaux de laine de verre entre montants',    tag: 'Isolation',      rotation: -12 },
+    { src: 'images/intervention-toiture-harnais.jpg',alt: 'Intervenant équipé d\'un harnais et d\'un casque sur une toiture',    tag: 'Nettoyage',      rotation: 8   },
+    { src: 'images/couvreur-nacelle-toit-tuiles.jpg',          alt: 'Couvreur travaillant depuis une nacelle sur un toit en tuiles',tag: 'Pose toiture',   rotation: -5  }
   ];
 
   /* ---------- CONFIG ---------- */
