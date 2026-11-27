@@ -16,8 +16,7 @@
     { src: 'images/fenetre-toit-2.jpg',     alt: 'Pose de fenêtre de toit',  tag: 'Velux',          rotation: 12  },
     { src: 'images/isolation-3.jpg',        alt: 'Isolation des combles',    tag: 'Isolation',      rotation: -12 },
     { src: 'images/nettoyage-toiture-1.jpg',alt: 'Démoussage de toiture',    tag: 'Nettoyage',      rotation: 8   },
-    { src: 'images/toiture-5.jpg',          alt: 'Toiture neuve en chantier',tag: 'Pose toiture',   rotation: -5  },
-    { src: 'images/drone.png',              alt: 'Inspection drone',         tag: 'Inspection',     rotation: 10  }
+    { src: 'images/toiture-5.jpg',          alt: 'Toiture neuve en chantier',tag: 'Pose toiture',   rotation: -5  }
   ];
 
   /* ---------- CONFIG ---------- */
